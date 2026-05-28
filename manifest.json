@@ -1,26 +1,80 @@
-[
-  {
-    "id": "template-provider",
-    "name": "Template Provider",
-    "description": "A starter template for creating Nuvio providers.",
-    "version": "1.0.0",
-    "author": "Your Name",
-    "supportedTypes": [
-      "movie",
-      "tv"
-    ],
-    "filename": "providers/template.js",
-    "enabled": false,
-    "logo": "",
-    "contentLanguage": [
-      "en"
-    ],
-    "formats": [
-      "mp4",
-      "mkv"
-    ],
-    "limited": false,
-    "disabledPlatforms": [],
-    "supportsExternalPlayer": true
-  }
-]
+{
+  "name": "Local Repo",
+  "version": "1.0.0",
+  "scrapers": [
+    {
+      "id": "iccftp",
+      "name": "ICCFTP",
+      "description": "Scrapes and streams movies from the ICCFTP local HTTP file server.",
+      "version": "1.0.0",
+      "author": "Antigravity",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/iccftp.js",
+      "enabled": true,
+      "logo": "",
+      "contentLanguage": [
+        "en"
+      ],
+      "formats": [
+        "mp4",
+        "mkv",
+        "avi"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    },
+    {
+      "id": "ftpbd",
+      "name": "FTPBD",
+      "description": "Streams high-speed movies and TV shows from the multi-server FTPBD network.",
+      "version": "1.0.0",
+      "author": "Antigravity",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/ftpbd.js",
+      "enabled": true,
+      "logo": "",
+      "contentLanguage": [
+        "en"
+      ],
+      "formats": [
+        "mp4",
+        "mkv",
+        "avi"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    },
+    {
+      "id": "template-provider",
+      "name": "Template Provider",
+      "description": "A starter template for creating Nuvio providers.",
+      "version": "1.0.0",
+      "author": "Your Name",
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
+      "filename": "providers/template.js",
+      "enabled": false,
+      "logo": "",
+      "contentLanguage": [
+        "en"
+      ],
+      "formats": [
+        "mp4",
+        "mkv"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    }
+  ]
+}
