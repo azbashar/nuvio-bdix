@@ -196,14 +196,15 @@ export function buildStream(
     url,
     movieTitle,
     year,
-    quality
+    quality,
+    file
 ) {
     return {
-        name: "BDIX",
+        name: `${file}`,
         title:
             `${movieTitle} (${year}) - ${quality}`,
         url,
         quality,
-        provider: "bdix"
+        provider: "bdix",
     };
 }
