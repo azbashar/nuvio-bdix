@@ -93,7 +93,7 @@ async function searchMoviesDirectory(directoryUrl, movie, results, visited) {
     }
 
     results.push(
-      buildStream(fullUrl, parsed.title, parsed.year, parsed.quality, parsed.title)
+      buildStream(fullUrl, parsed.title, parsed.year, parsed.quality, filename)
     );
   }
 }
