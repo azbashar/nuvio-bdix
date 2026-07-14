@@ -1,43 +1,17 @@
 {
-  "name": "Local Repo",
+  "name": "BDIX Providers",
   "version": "1.0.0",
   "scrapers": [
     {
-      "id": "iccftp",
-      "name": "ICCFTP",
-      "description": "Scrapes and streams movies from the ICCFTP local HTTP file server.",
+      "id": "iccftp-movies",
+      "name": "ICCFTP Movies",
+      "description": "Scrapes and streams movies from the ICCFTP HTTP file server.",
       "version": "1.0.0",
-      "author": "Antigravity",
+      "author": "azbashar",
       "supportedTypes": [
-        "movie",
-        "tv"
+        "movie"
       ],
-      "filename": "providers/iccftp.js",
-      "enabled": true,
-      "logo": "",
-      "contentLanguage": [
-        "en"
-      ],
-      "formats": [
-        "mp4",
-        "mkv",
-        "avi"
-      ],
-      "limited": false,
-      "disabledPlatforms": [],
-      "supportsExternalPlayer": true
-    },
-    {
-      "id": "ftpbd",
-      "name": "FTPBD",
-      "description": "Streams high-speed movies and TV shows from the multi-server FTPBD network.",
-      "version": "1.0.0",
-      "author": "Antigravity",
-      "supportedTypes": [
-        "movie",
-        "tv"
-      ],
-      "filename": "providers/ftpbd.js",
+      "filename": "providers/iccftp-movies.js",
       "enabled": true,
       "logo": "",
       "contentLanguage": [

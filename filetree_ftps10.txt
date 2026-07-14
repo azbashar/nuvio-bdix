@@ -1,0 +1,1119 @@
+http://10.16.100.202/ftps10
+├── iccftps10sasd1
+│   ├── Documentary
+│   │   └── English
+│   ├── Games
+│   │   └── Strategy Games
+│   ├── Movies
+│   │   ├── 3D
+│   │   │   ├── Animation
+│   │   │   └── English
+│   │   ├── 4K
+│   │   │   ├── Animated
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   ├── Others Foreign
+│   │   │   │   ├── Denmark
+│   │   │   │   ├── France
+│   │   │   │   ├── Netherlands
+│   │   │   │   └── Spain
+│   │   │   └── South Indian
+│   │   ├── Animated
+│   │   ├── Anime
+│   │   ├── Bangla (BD)
+│   │   ├── Bangla (Kolkata)
+│   │   ├── Chinese
+│   │   ├── Documentary
+│   │   │   ├── English
+│   │   │   ├── Poland
+│   │   │   ├── Russian
+│   │   │   └── Spain
+│   │   ├── Dual Audio
+│   │   ├── English
+│   │   │   └── Death Island Paranormal Retribution (2017)
+│   │   ├── Exclusive Full HD
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   └── Other Foreign Movies
+│   │   ├── Hindi
+│   │   ├── Indonesian
+│   │   ├── Japanese
+│   │   ├── Korean
+│   │   ├── Other Foreign Movies
+│   │   │   ├── Argentina
+│   │   │   ├── Belgium
+│   │   │   ├── Brazil
+│   │   │   ├── Czech Republic
+│   │   │   ├── Estonia
+│   │   │   └── (18 more...)
+│   │   ├── Pakistan
+│   │   ├── Punjabi
+│   │   ├── South Indian (Hindi Dubbed)
+│   │   └── South Indian
+│   │       └── Telugu
+│   ├── Others
+│   │   ├── E Book
+│   │   └── Learning
+│   ├── Software
+│   │   └── OS
+│   └── Tv Show
+│       ├── Animation
+│       │   ├── Astonishing X Men Season 01 (2009) Completed
+│       │   ├── Blue Eye Samurai Season 01 (2023) Completed
+│       │   ├── Iyanu Season 01 (2025) Completed
+│       │   ├── Samurai Jack Season 04 (2004) Completed
+│       │   ├── The Boys Presents Diabolical Season 01 (2022) Completed
+│       │   └── (2 more...)
+│       ├── Anime
+│       │   ├── Fate Zero Season 01 (2011) Completed
+│       │   ├── Hells Paradise (Jigokuraku) Season 01 (2023) Completed
+│       │   ├── Record of Ragnarok (Shuumatsu no Valkyrie) Season 01 (2021) Completed
+│       │   ├── The Promised Neverland (Yakusoku no Neverland) Season 01 (2019) Dubbed Completed
+│       │   └── Ultraman Season 01 (2019) Completed
+│       ├── Award
+│       ├── Bangla
+│       │   ├── August 14 Season 01 (2020) Completed
+│       │   ├── Bonyo Premer Golpo Season 01 (2020) Completed
+│       │   ├── Feluda Sheyal Debota Rahasya (2017) Completed
+│       │   ├── Lalbazaar Season 01 (2020) Completed
+│       │   ├── Mafia Season 01 (2020) Completed
+│       │   └── (5 more...)
+│       ├── Dual Audio
+│       │   ├── Aema Season 01 (2025) (Hindi & English) Completed
+│       │   ├── As the Crow Flies (Kus Ucusu) (English & Hindi) Season 01 (2022) Completed
+│       │   ├── Beautiful World (Areumdaun Sesang) Season 01 (2019) (Hindi Dubbed) Completed
+│       │   ├── Black Mirror Season 06 (2023) (Hindi  & English) Completed
+│       │   ├── Blood Coast (Pax Massilia) Season 01 (2023) (Hindi & English) Completed
+│       │   └── (14 more...)
+│       ├── English
+│       │   ├── 24 Season 04 (2005) Completed
+│       │   ├── Age of The Living Dead Season 01 (2018) Completed
+│       │   ├── Apple Cider Vinegar Season 01 (2025) Completed
+│       │   ├── Barry Season 03 (2022) Completed
+│       │   ├── Beyond Season 02 (2018) Completed
+│       │   └── (56 more...)
+│       ├── Hindi
+│       │   ├── Anantham Season 01 (2022) Completed
+│       │   ├── Bamini and Boys Season 01 (2021) Completed
+│       │   ├── Betaal Season 01 (2020) Completed
+│       │   ├── Bhaag Beanie Bhaag Season 01 (2020) Completed
+│       │   ├── Bhaukaal Season 01 (2020) Completed
+│       │   └── (22 more...)
+│       ├── Kolkata
+│       │   └── Honeymoon Season 01 (2023) Completed
+│       ├── Other Foreign
+│       │   ├── Arabic
+│       │   │   └── Paranormal Season 01 (2020) Arabic Completed
+│       │   ├── Brazil
+│       │   │   ├── Dom Season 01 (2021) Completed
+│       │   │   └── Summer Heat (Temporada de Verao) Season 01 (2022) Completed
+│       │   ├── France
+│       │   │   └── Citadel Diana Season 01 (2024) Completed
+│       │   ├── Japanese
+│       │   │   └── Miss King Season 01 (2025) Completed
+│       │   ├── Korean
+│       │   │   ├── Island (Aillaendeu) Season 01 (2022) Completed
+│       │   │   └── Snowdrop (Seolganghwa) Season 01 (2021) Completed
+│       │   └── (4 more...)
+│       └── WWE
+│           ├── Impact Wrestling Rebellion
+│           ├── Saturday Nights Main Event
+│           ├── WWE Friday Night SmackDown
+│           └── WWE Monday Night Raw
+├── iccftps10sasd10
+│   ├── Games
+│   │   └── Strategy Games
+│   ├── Movies
+│   │   ├── 4K
+│   │   │   ├── Animated
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   ├── Other Foreign
+│   │   │   └── South Indian
+│   │   ├── Animated
+│   │   ├── Anime
+│   │   ├── Bangla (BD)
+│   │   ├── Bangla (Kolkata)
+│   │   ├── Chinese
+│   │   ├── Documentaries
+│   │   ├── Dual Audio
+│   │   ├── English
+│   │   ├── Exclusive Full HD
+│   │   │   ├── English
+│   │   │   └── Other Foreign
+│   │   │       ├── Indonesian
+│   │   │       └── Korean
+│   │   ├── Hindi
+│   │   ├── Indonesian
+│   │   ├── Japanese 
+│   │   ├── Korean
+│   │   ├── Other Foreign
+│   │   │   ├── Brazil
+│   │   │   ├── Bulgaria
+│   │   │   ├── Czech Republic
+│   │   │   ├── Estonia
+│   │   │   ├── Finland
+│   │   │   └── (14 more...)
+│   │   ├── Pakistani
+│   │   ├── Punjabi Movies
+│   │   ├── South Indian (Hindi Dubbed)
+│   │   └── South Indian
+│   │       └── Tamil
+│   ├── Others
+│   │   ├── Kids (Cartoon)
+│   │   │   └── DuckTales Season 03 (2020) Completed
+│   │   └── Learning
+│   │       └── Adobe Photoshop CC (2018) Bangla Professional Tutorial
+│   └── TV Shows
+│       ├── Animation
+│       │   ├── Castlevania Season 04 (2021) Completed
+│       │   ├── Star Wars The Bad Batch Season 01 (2021) Completed
+│       │   └── The Avengers Earths Mightiest Heroes Season 01 (2010) Completed
+│       ├── Anime
+│       │   ├── Castlevania Season 01 (2017) Completed
+│       │   ├── Castlevania Season 02 (2018) Completed
+│       │   ├── Castlevania Season 03 (2020) Completed
+│       │   ├── Castlevania Season 04 (2021) Completed
+│       │   ├── Fog Hill of Five Elements (Wu Shan Wu Xing) Season 02 (2023) Completed
+│       │   └── (2 more...)
+│       ├── Awards
+│       ├── Bangla
+│       │   ├── Contract Season 01 (2021) Completed
+│       │   ├── Kolkata
+│       │   │   └── Honeymoon Season 01 (2023) Completed
+│       │   ├── Ladies and Gentlemen Season 01 (2021) Completed
+│       │   └── Taqdeer Season 01 (2020) Completed
+│       ├── Dual Audio
+│       │   ├── Baby Reindeer Season 01 (2024) (Hindi & English) Completed
+│       │   ├── Burning Body (El cuerpo en llamas) Season 01 (2023) (Hindi & English) Completed
+│       │   ├── Citadel Season 02 (2026) (Hindi & English) Completed
+│       │   ├── Daredevil Season 03 (2018) (Hindi & English) Completed
+│       │   ├── Eden Season 01 (2021) (Japanese & English) Completed
+│       │   └── (10 more...)
+│       ├── English
+│       │   ├── 1899 Season 01 (2022) Completed
+│       │   ├── 9 1 1 Season 02 (2018) Completed
+│       │   ├── Adolescence Season 01 (2025) Completed
+│       │   ├── After the Flood Season 02 (2025) Completed
+│       │   ├── Alien Earth Season 01 (2025) Completed
+│       │   └── (48 more...)
+│       ├── Hindi
+│       │   ├── 9 Hours Season 01 (2022) Completed
+│       │   ├── Aashiqana Season 02 (2022) Completed
+│       │   ├── Aspirants Season 02 (2023) Completed
+│       │   ├── Bang Baang Season 01 (2021) Completed
+│       │   ├── Bullets Season 01 (2021) Completed
+│       │   └── (21 more...)
+│       ├── Other Foreign
+│       │   ├── German
+│       │   │   └── Woman of the Dead (Totenfrau) Season 01 (2022) Completed
+│       │   ├── Gujarat
+│       │   │   └── Kadak Mitthi Season 02 (2021) Completed
+│       │   ├── Italian
+│       │   │   └── Gomorrah Season 02 (2016) Completed
+│       │   ├── Korean
+│       │   │   ├── Cashero (Kaesyeoro) Season 01 (2025) Completed
+│       │   │   ├── Juvenile Justice Season 01 (2022) Completed
+│       │   │   ├── Kingdom Season 01 (2019) Completed
+│       │   │   └── Shadow Detective Season 01 (2022) Completed
+│       │   ├── Netherlands
+│       │   │   └── Modern Love Amsterdam Season 01 (2022) Completed
+│       │   └── (2 more...)
+│       ├── Serials (Documentaries)
+│       │   └── English
+│       │       └── America the Beautiful Season 01 (2022) Completed
+│       └── WWE
+│           ├── WWE Elimination Chamber
+│           ├── WWE Friday Night SmackDown
+│           ├── WWE Monday Night Raw
+│           └── WWE Royal Rumble
+├── iccftps10sasd2
+│   ├── Documentary
+│   │   └── Adolf Hitler The Greatest Story Never Told (2013)
+│   ├── Games
+│   │   ├── Racing Games
+│   │   └── Strategy Games
+│   ├── Movies
+│   │   ├── 3D
+│   │   ├── 4K
+│   │   │   ├── Animation
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   ├── Other Foreign
+│   │   │   │   └── Brazil
+│   │   │   └── South Indian
+│   │   ├── Animated
+│   │   ├── Anime
+│   │   ├── Bangla (BD)
+│   │   ├── Bangla (Kolkata)
+│   │   ├── Chinese
+│   │   ├── Documentary
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   └── Other Foreign
+│   │   │       ├── Brazil
+│   │   │       ├── France
+│   │   │       └── Japanese
+│   │   ├── Dual Audio
+│   │   ├── English
+│   │   ├── Exclusive Full HD
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   └── Other Foreign Movies
+│   │   ├── Hindi
+│   │   │   └── test
+│   │   ├── Indonesian
+│   │   ├── Japanese
+│   │   ├── Korean
+│   │   ├── Other Foreign Movies
+│   │   │   ├── Brazil
+│   │   │   ├── Czech Republic
+│   │   │   ├── Denmark
+│   │   │   ├── Egypt
+│   │   │   ├── Estonia
+│   │   │   └── (20 more...)
+│   │   ├── Pakistani
+│   │   ├── Punjabi Movies
+│   │   ├── South Indian (Hindi Dubbed)
+│   │   └── South Indian
+│   ├── Others
+│   │   └── Learning
+│   ├── Software
+│   │   ├── Developer Tools
+│   │   ├── Internet
+│   │   └── Utility
+│   └── Tv Show
+│       ├── Animation
+│       │   ├── Invincible Season 01 (2021) Completed
+│       │   └── Samurai Rabbit The Usagi Chronicles Season 01 (2022) Completed
+│       ├── Anime
+│       │   ├── Invincible Season 01  (2021) Completed
+│       │   └── We the People Season 01 (2021) Completed
+│       ├── Award
+│       ├── Bangla Drama
+│       ├── Bangla
+│       │   ├── Dhoka Season 01 (2020) Completed
+│       │   ├── Kaantaye Kaantaye Season 01 (2024) Completed
+│       │   ├── Kalimpong Krimes Season 01 (2021) Completed
+│       │   ├── Tansener Tanpura Season 02 (2020) Completed
+│       │   └── Turu Love Season 01 (2021) Completed
+│       ├── Dual Audio
+│       │   ├── Barbarians Season 02 (2022) (Hindi & English) Completed
+│       │   ├── Cometierra (Unburied) Season 01 (2025) (Hindi & English) Completed
+│       │   ├── Cruel Intentions Season 01 (2024) (Hindi & English) Completed
+│       │   ├── Family Plan (Gajokgyehoek) Sesaon 01 (2025) (Hindi & Korean) Completed
+│       │   ├── Fauda Season 02 (2017) (Hindu & English) Completed
+│       │   └── (12 more...)
+│       ├── English
+│       │   ├── 24 Season 05 (2006) Completed
+│       │   ├── Alex Rider Season 03 (2024) Completed
+│       │   ├── Altered Carbon Season 02 (2020) Completed
+│       │   ├── Anatomy of a Scandal Season 01 (2022) Completed
+│       │   ├── Better Call Saul Season 04 (2018) Completed
+│       │   └── (59 more...)
+│       ├── Hindi
+│       │   ├── Abhay Season 02 (2020) Completed
+│       │   ├── BOSS Baap of Special Services Season 01 (2019) Completed
+│       │   ├── Bad Cop Season (2024) Completed
+│       │   ├── Black Warrant Season 01 (2025) Completed
+│       │   ├── Eternally Confused and Eager for Love Season 01 (2022) Completed
+│       │   └── (18 more...)
+│       ├── Others
+│       │   ├── China
+│       │   │   └── The Tale of Rose (Mei gui de gu shi) Season 01 (2024) Completed
+│       │   ├── France
+│       │   │   └── Gone for Good (Disparu a jamais) Season 01 (2021) Completed
+│       │   ├── German
+│       │   │   └── Bad Banks Season 01 (2018) Completed
+│       │   ├── Greece
+│       │   │   └── Tehran Season 01 (2020) Completed
+│       │   ├── Italian
+│       │   │   ├── Gomorrah Season 04 (2019) Completed
+│       │   │   └── The Law According to Lidia Poet (Lidia Poet) Season 01 (2023) Completed
+│       │   └── (5 more...)
+│       └── WWE
+│           ├── Royal Rumble
+│           ├── WWE Friday Night SmackDown
+│           ├── WWE Monday Night Raw
+│           └── WrestleMania
+├── iccftps10sasd3
+│   ├── Documentary
+│   ├── Games
+│   │   ├── Racing Games
+│   │   └── Strategy Games
+│   ├── Movies
+│   │   ├── 3D
+│   │   │   └── English
+│   │   ├── 4K
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   ├── Other Foreign
+│   │   │   │   └── Germany
+│   │   │   └── South Indian
+│   │   ├── Animated
+│   │   ├── Bangla (BD)
+│   │   ├── Bangla (Kolkata)
+│   │   ├── Chinese
+│   │   ├── Documentary
+│   │   ├── Dual Audio
+│   │   ├── English
+│   │   ├── Exclusive Full HD
+│   │   │   ├── Animation
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   └── Other Foreign Movies
+│   │   ├── Hindi
+│   │   ├── Indonesian
+│   │   ├── Japanese
+│   │   ├── Korean
+│   │   ├── Other Foreign Movies
+│   │   │   ├── Angola
+│   │   │   ├── Belgium
+│   │   │   ├── Brazil
+│   │   │   ├── Denmark
+│   │   │   ├── France
+│   │   │   └── (19 more...)
+│   │   ├── Pakistani
+│   │   ├── Punjabi
+│   │   ├── South Indian (Hindi Dubbed)
+│   │   └── South Indian
+│   │       └── Telugu
+│   ├── Others
+│   │   ├── Kids (Cartoon)
+│   │   │   └── DuckTales Season 02 (2018) Completed
+│   │   └── Learning
+│   ├── Software
+│   └── Tv Show
+│       ├── Animation
+│       │   ├── Dota Dragons Blood Season 01 (2021) Completed
+│       │   ├── My Adventures with Superman Season 01 (2023) Completed
+│       │   ├── Tales of the Jedi Season 01 (2022) Completed
+│       │   └── The Legend of Vox Machina Season 01 (2022) Completed
+│       ├── Anime
+│       │   ├── Black Clover Season 04 (2021) Completed
+│       │   └── Dr Stone (Dokutaa Sutoon) Season 03 (2023) Completed
+│       ├── Award
+│       ├── Bangla Drama
+│       ├── Bangla Telefilm
+│       ├── Bangla
+│       │   ├── Fish and Chips Season 01 (2021) Completed
+│       │   ├── Kolkata
+│       │   │   ├── Inspector Nalinikanta Season 01 (2022) Completed
+│       │   │   └── Prankenstein Season 01 (2022) Completed
+│       │   ├── Mohanagar Season 01 (2021) Completed
+│       │   ├── Murder in the Hills Season 01 (2021) Completed
+│       │   ├── Paanch Phoron Season 02 (2020) Completed
+│       │   └── (1 more...)
+│       ├── Documentaries
+│       │   └── Hindi
+│       │       └── Honeymoon Se Hatya Season 01 (2026) Completed
+│       ├── Dual Audio
+│       │   ├── 3 Body Problem Season 01 (2024) (Hindi & English) Completed
+│       │   ├── Agatha All Along Season 01 (2024) (Hindi & English) Completed
+│       │   ├── Black Mirror Season 07 (2025) (Hindi & English) Completed
+│       │   ├── Dont Come Home (Ya Klap Ban) Season 01 (2024) (Hindi & English) Completed
+│       │   ├── Dont Dare To Dream (Jiltooui Hwashin) Season 01 (2016) (Hindi Dubbed) Completed
+│       │   └── (16 more...)
+│       ├── English
+│       │   ├── 1883 Season 01 (2021) Completed
+│       │   ├── 24 Season 06 (2007) Completed
+│       │   ├── A Friend of the Family Season 01 (2022) Completed
+│       │   ├── American Soul Season 01 (2019) Completed
+│       │   ├── Arrested Development Season 04 (2013) Completed
+│       │   └── (57 more...)
+│       ├── Hindi
+│       │   ├── A Simple Murder Season 01 (2020) Completed
+│       │   ├── Adhura Season 01 (2023) Completed
+│       │   ├── Avrodh The Siege Within Season 02 (2022) Completed
+│       │   ├── Badaa Naam Karenge Season 01 (2025) Completed
+│       │   ├── Bhalla Calling Bhalla (2020) Completed
+│       │   └── (23 more...)
+│       ├── Other Foreign
+│       │   ├── Chinese
+│       │   ├── France
+│       │   │   ├── Marie Antoinette Season 01 (2022) Completed
+│       │   │   └── Nero the Assassin (Nero) Season 01 (2025) Completed
+│       │   ├── Germany
+│       │   ├── Gujarati
+│       │   │   └── Yaadon Ni Safar Season 01 (2021) Completed
+│       │   ├── Italian
+│       │   │   ├── Around the World in 80 Days Season 01 (2021) Completed
+│       │   │   ├── Di4ries (Di4ri) Season 01 (2022) Completed
+│       │   │   └── Gomorrah Season 05 (2021) Completed
+│       │   └── (3 more...)
+│       └── WWE
+│           ├── WWE Crown Jewel
+│           ├── WWE Friday Night SmackDown
+│           └── WWE Monday Night Raw
+├── iccftps10sasd4
+│   ├── Games
+│   │   └── Strategy Games
+│   ├── Movies
+│   │   ├── 3D
+│   │   │   └── English
+│   │   ├── 4K
+│   │   │   ├── Animated
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   ├── Other Foreign
+│   │   │   │   ├── China
+│   │   │   │   ├── France
+│   │   │   │   └── Korean
+│   │   │   └── South Indian
+│   │   ├── Animated
+│   │   │   ├── Ireland
+│   │   │   └── Spanish
+│   │   ├── Anime
+│   │   ├── Bangla (BD)
+│   │   ├── Bangla (Kolkata)
+│   │   ├── Chinese
+│   │   ├── Documentaries
+│   │   │   ├── English
+│   │   │   └── Other Foreign
+│   │   │       ├── Chile
+│   │   │       ├── Colombia
+│   │   │       └── France
+│   │   ├── Dual Audio
+│   │   │   └── Animated
+│   │   ├── English
+│   │   ├── Exclusive Full HD
+│   │   │   ├── Animation
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   └── Other Foreign Movies
+│   │   ├── Hindi
+│   │   ├── Indonesian
+│   │   ├── Japanese
+│   │   ├── Korean
+│   │   ├── Other Foreign Movies
+│   │   │   ├── Argentina
+│   │   │   ├── Brazil
+│   │   │   ├── Colombia
+│   │   │   ├── Czech Republic
+│   │   │   ├── Denmark
+│   │   │   └── (26 more...)
+│   │   ├── Pakistani
+│   │   ├── Punjabi
+│   │   ├── South Indian (Hindi Dubbed)
+│   │   └── South Indian
+│   │       ├── Malayalam
+│   │       └── Tamil
+│   ├── Software
+│   │   └── OS
+│   └── Tv Show
+│       ├── Animation
+│       │   ├── Batman Caped Crusader Season 01 (2024) Completed
+│       │   └── Kung Fu Panda Legends of Awesomeness Season 02 (2012) Completed
+│       ├── Anime
+│       │   ├── Great Pretender Season 01 (2020) Completed
+│       │   ├── What If Season 01 (2021) Completed
+│       │   └── Yasuke Season 01 (2021) Completed
+│       ├── Award
+│       ├── Bangla Drama
+│       ├── Bangla
+│       │   ├── Kuhok Season 01 (2019) Completed
+│       │   └── Rahasya Romancha Series Season 03 (2020) Completed
+│       ├── Dual Audio
+│       │   ├── A Series of Unfortunate Events Season 01 (2017) (Hindi & English) Completed
+│       │   ├── Blood Sex & Royalty Season 01 (2022) (Hindi & English) Completed
+│       │   ├── Cowboy Bebop Season 01 (2021) (English & Hindi) Completed
+│       │   ├── Inside Man Season 01 (2022) (Hindi & English) Completed
+│       │   ├── Little Disasters Season 01 (2025) (Hindi & English) Completed
+│       │   └── (5 more...)
+│       ├── English
+│       │   ├── 1923 Season 01 (2022) Completed
+│       │   ├── 2 Broke Girls Season 01 (2011) Completed
+│       │   ├── 24 Season 07 (2009) Completed
+│       │   ├── 9 1 1 Season 03 (2019) Completed
+│       │   ├── American Horror Story Season 04 (2014) Completed
+│       │   └── (49 more...)
+│       ├── Hindi
+│       │   ├── Bhanwar Season 01 (2020) Completed
+│       │   ├── Brochara Season 02 (2022) Completed
+│       │   ├── Couple Goals Season 01 (2021) Completed
+│       │   ├── Ek Thi Begum Season 02 (2021) Completed
+│       │   ├── His Story (His Storyy) Season 01 (2021) Completed
+│       │   └── (10 more...)
+│       ├── Others
+│       │   ├── Brazil
+│       │   │   └── Criminal Code (DNA do Crime) Season 01 (2023) Completed
+│       │   ├── Colombia
+│       │   │   └── Medusa Season 01 (2025) Completed
+│       │   ├── Japanese
+│       │   │   └── Modern Love Tokyo Season 01 (2022) Completed
+│       │   ├── Korean
+│       │   │   ├── Alchemy of Souls (Hwan Hon) Season 02 (2023) Completed
+│       │   │   ├── Big Mouth Season 01 (2022) Completed
+│       │   │   ├── Love All Play (The Speed Going to You 493km) Season 01 (2022) Completed
+│       │   │   └── Only One Person (Han Saramman) Season 01 (2021) Completed
+│       │   ├── Norway
+│       │   │   └── Ragnarok Season 02 (2021) Completed
+│       │   └── (3 more...)
+│       └── WWE
+│           ├── Monday Night  Raw
+│           ├── WWE Friday Night SmackDown
+│           ├── WWE Main Event
+│           └── WrestleMania
+├── iccftps10sasd5
+│   ├── Games
+│   │   ├── Android Games
+│   │   ├── Racing Games
+│   │   └── Strategy Games
+│   ├── Movies
+│   │   ├── 3D
+│   │   │   ├── Animated
+│   │   │   └── English
+│   │   ├── 4K
+│   │   │   ├── Animated
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   ├── Other Foreign
+│   │   │   ├── Punjabi
+│   │   │   └── (1 more...)
+│   │   ├── Animated
+│   │   ├── Anime
+│   │   ├── Bangla (BD)
+│   │   ├── Bangla (Kolkata)
+│   │   ├── Chinese
+│   │   ├── Documentary
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   ├── Korean 
+│   │   │   └── Other Foreign
+│   │   │       ├── Finnish
+│   │   │       └── Grermany
+│   │   ├── Dual Audio
+│   │   ├── English
+│   │   ├── Exclusive Full HD
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   └── Other Foreign Movies
+│   │   ├── Hindi
+│   │   ├── Indonesian Movies
+│   │   ├── Japanese
+│   │   ├── Korean
+│   │   ├── Other Foreign Movies
+│   │   │   ├── Brazil
+│   │   │   ├── Denmark
+│   │   │   ├── French
+│   │   │   ├── Germany
+│   │   │   ├── Hong Kong
+│   │   │   └── (16 more...)
+│   │   ├── Pakistani
+│   │   ├── Punjabi
+│   │   ├── South Indian (Hindi Dubbed)
+│   │   └── South Indian
+│   │       ├── Kannada
+│   │       └── Tamil
+│   ├── Software
+│   │   ├── Adobe Collection
+│   │   ├── Internet Software
+│   │   ├── Microsoft Office
+│   │   └── Utility Software
+│   └── Tv Show
+│       ├── Animation
+│       │   ├── Black Panther Season 01 (2010) Completed
+│       │   ├── Harvey Birdman Attorney at Law Season 03 (2005) Completed
+│       │   └── Wolf King Season 01 (2025) Completed
+│       ├── Anime
+│       │   ├── Jujutsu Kaisen Season 01 (2020) Completed
+│       │   ├── Shinobi no Ittoki Season 01 (2022) Completed
+│       │   └── To Your Eternity (Fumetsu no Anata e) Season 01 (2021) Completed
+│       ├── Award
+│       ├── Bangla Drama
+│       ├── Bangla
+│       │   ├── Abhishapto Season 01 (2023) Completed
+│       │   ├── BD
+│       │   │   └── Makal Season 01 (2022) Completed
+│       │   ├── Byomkesh Season 06 (2017) Complete
+│       │   ├── Gangulys Wed Guhas Season 01 (2021) Completed
+│       │   ├── Golpo Golpo Khela Season 01 (2021) Completed
+│       │   └── (2 more...)
+│       ├── Documentaries
+│       │   ├── English
+│       │   │   └── Depp vs Heard All on the Line Season 01 (2023) Completed
+│       │   └── Hindi
+│       │       └── Hathras (Hathras 16 Days) Season 01 (2026) Completed
+│       ├── Dual Audio
+│       │   ├── Black Knight Season 01 (2023) (Hindi & English) Completed
+│       │   ├── Cherans Journey Season 01 (2024) (Hindi Dubbed) Completed
+│       │   ├── Game Of Thrones Season 04 (2014) (Hindi & English) Completed
+│       │   ├── Playing Gracie Darling Season 01 (2025) (Hindi & English) Completed
+│       │   ├── Sins of Kujo (Kujo no Taizai) Season 01 (2026) (Hindi & English) Completed
+│       │   └── (9 more...)
+│       ├── English
+│       │   ├── 24 Season 08 (2010) Completed
+│       │   ├── American Horror Story Season 06 (2016) Completed
+│       │   ├── And Just Like That Season 01 (2021) Completed
+│       │   ├── Bosch Legacy Season 03 (2025) Completed
+│       │   ├── Bosch Season 07 (2021) Completed
+│       │   └── (47 more...)
+│       ├── Hindi
+│       │   ├── Auto Shankar Season 01 (2019) Completed
+│       │   ├── Cartel Season 01 (2021) Completed
+│       │   ├── Code M Season 01 (2020) Completed
+│       │   ├── Cyber Vaar Season 01 (2022) Completed
+│       │   ├── Dahan Raakan Ka Rahasya Season 01 (2022) Completed
+│       │   └── (10 more...)
+│       ├── Other Foreign
+│       │   ├── China
+│       │   │   └── The Love You Give Me Season 01 (2023) Completed
+│       │   ├── Germany
+│       │   │   └── The Bridge (Bron Broen) Season 03 (2015) Completed
+│       │   ├── Japanese
+│       │   │   └── First Love Season 01 (2022) Completed
+│       │   ├── Korean
+│       │   │   ├── Crash Landing on You (Sarangeui bulsachak) Season 01 (2019) Completed
+│       │   │   ├── Designated Survivor 60 Days Season 01 (2019) Completed
+│       │   │   ├── My ID Is Gangnam Beauty (Nae Aidineun Gangnammiin) Season 01 (2018) Completed
+│       │   │   ├── Sijipeuseu The Myth Season 01 (2021) Completed
+│       │   │   └── The Golden Spoon Season 01 (2022) Completed
+│       │   ├── Kuwait
+│       │   │   └── The Exchange Season 01 (2023) Completed
+│       │   └── (2 more...)
+│       └── WWE
+│           ├── WWE Friday Night SmackDown
+│           ├── WWE Monday Night Raw
+│           └── WWE Payback
+├── iccftps10sasd6
+│   ├── Documentary
+│   │   ├── English
+│   │   └── Hindi
+│   │       └── Roar of The Lion Season 01 (2019) Completed
+│   ├── Games
+│   │   └── Strategy Games
+│   ├── Movies
+│   │   ├── 4K
+│   │   │   ├── Animated
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   ├── Punjabi
+│   │   │   └── South Indian
+│   │   ├── Animated
+│   │   ├── Anime
+│   │   ├── Bangla (BD)
+│   │   ├── Bangla (Kolkata)
+│   │   ├── Chinese
+│   │   │   └── Lapse
+│   │   ├── Documentary
+│   │   │   ├── Chinese
+│   │   │   ├── English
+│   │   │   └── Other Foreign
+│   │   ├── Dual Audio
+│   │   ├── English
+│   │   ├── Exclusive Full HD
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   └── Other Foreign Movies
+│   │   ├── Hindi
+│   │   ├── Indonesian
+│   │   ├── Japanese
+│   │   ├── Korean
+│   │   ├── Other Foreign Movies
+│   │   │   ├── Brazil
+│   │   │   ├── Denmark
+│   │   │   ├── Egypt
+│   │   │   ├── French
+│   │   │   ├── Germany
+│   │   │   └── (20 more...)
+│   │   ├── Punjabi
+│   │   ├── South Indian (Hindi Dubbed)
+│   │   └── South Indian
+│   │       └── Telugu
+│   ├── Software
+│   │   ├── Microsoft Office
+│   │   ├── OS
+│   │   └── Others Software
+│   └── Tv Show
+│       ├── Animation
+│       │   ├── Castlevania Nocturne Season 02 (2025) Completed
+│       │   ├── Jurassic World Camp Cretaceous Season 02 (2020) Completed
+│       │   ├── Star Wars The Clone Wars Season 04 (2011) Completed
+│       │   ├── Stripperella Season 01 (2003) Completed
+│       │   └── The Freak Brothers Season 02 (2023) Completed
+│       ├── Anime
+│       │   ├── Lookism Season 01 (2022) Completed
+│       │   ├── Ninja Kamui Season 01 (2024) Completed
+│       │   ├── Oshi No Ko Season 01 (2023) Completed
+│       │   └── Trese Season 01 (2021) Completed
+│       ├── Award
+│       ├── Bangla
+│       │   ├── BD
+│       │   │   └── Teerondaj Season 01 (2022) Completed
+│       │   ├── Charitraheen Season 02 (2018) Completed
+│       │   ├── Damayanti (Nokol Heere) Season 02 (2021) Completed
+│       │   └── Utshober Pore Season 01 (2020) Completed
+│       ├── Dual Audio
+│       │   ├── A Knight of the Seven Kingdoms The Hedge Knight Season 01 (2026) (Hindi & English) Completed
+│       │   ├── Being Gordon Ramsay Season 01 (2026) (Hindi & English) Completed
+│       │   ├── Elite Season 01 (2018) (English & Spanish) Completed
+│       │   ├── Elite Season 03 (2020) (English & Spanish) Completed
+│       │   ├── Fate The Winx Saga Season 01 (2021)  (Hindi & English) Completed
+│       │   └── (19 more...)
+│       ├── English
+│       │   ├── 13 Reasons Why Season 02 (2018) Completed
+│       │   ├── 13 Reasons Why Season 03 (2019) Completed
+│       │   ├── Acapulco Season 03 (2024) Completed
+│       │   ├── Anne Season 01 (2022) Completed
+│       │   ├── Big Mistakes Season 01 (2026) Completed
+│       │   └── (29 more...)
+│       ├── Hindi
+│       │   ├── Aarya Season 01 (2020) Completed
+│       │   ├── Ab Hoga Hisaab Season 01 (2026) Completed
+│       │   ├── Bhay The Gaurav Tiwari Mystery Season 01 (2025) Completed
+│       │   ├── Call My Agent Bollywood Season 01 (2021) Completed
+│       │   ├── City of Dreams (Mayanagari City of Dreams) Season 02 (2021) Completed
+│       │   └── (24 more...)
+│       ├── Other Foreign
+│       │   ├── Arabic
+│       │   │   ├── AlRawabi School for Girls Season 01 (2021) Completed
+│       │   │   └── Fauda Season 03 (2020) Completed
+│       │   ├── Germany
+│       │   │   └── Dear Child (Liebes Kind) Season 01 (2023) Completed
+│       │   ├── Italian
+│       │   │   └── Gomorrah Season 03 (2017) Completed
+│       │   ├── Korean
+│       │   │   ├── Are You Human Too (Neodo Inganini) Season 01 (2018) Completed
+│       │   │   ├── Gyeongseong Creature (Gyeongseong Keuricheo) Season 02 (2024) Completed
+│       │   │   ├── Tale of the Nine Tailed (Gumihodyeon) Season 01 (2020) Completed
+│       │   │   └── The Penthouse War in Life (Penteuhauseu) Season 01 (2020) Completed
+│       │   ├── Norway
+│       │   │   └── Jo Nesbos Detective Hole (Detective Hole) Season 01 (2026) Completed
+│       │   └── (4 more...)
+│       └── WWE
+│           ├── WWE Friday Night SmackDown
+│           └── WWE Monday Night Raw
+├── iccftps10sasd7
+│   ├── Documentary
+│   ├── Games
+│   │   ├── Racing Games
+│   │   └── Strategy Games
+│   ├── Movies
+│   │   ├── 3D
+│   │   │   └── English
+│   │   ├── 4K
+│   │   │   ├── Animated
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   ├── Other Foreign
+│   │   │   │   └── Chinese
+│   │   │   └── South Indian
+│   │   ├── Animated
+│   │   ├── Anime
+│   │   ├── Bangla (BD)
+│   │   ├── Bangla (Kolkata)
+│   │   ├── Chinese
+│   │   ├── Documentaries
+│   │   │   ├── English
+│   │   │   └── Other Foreign
+│   │   ├── Dual Audio
+│   │   ├── English
+│   │   ├── Exclusive Full HD
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   └── Other Foreign Movies
+│   │   ├── Hindi
+│   │   ├── Indonesian
+│   │   ├── Japanese
+│   │   ├── Korean
+│   │   ├── Other Foreign Movies
+│   │   │   ├── Belgium
+│   │   │   ├── Brazil
+│   │   │   ├── Chinese
+│   │   │   ├── Colombia
+│   │   │   ├── Czech Republic
+│   │   │   └── (18 more...)
+│   │   ├── Punjabi Movies
+│   │   ├── South Indian (Hindi Dubbed)
+│   │   └── South Indian
+│   │       ├── Malayalam
+│   │       └── Telegu
+│   ├── Software
+│   │   └── Others Software
+│   └── Tv Show
+│       ├── Animation
+│       │   ├── Eyes of Wakanda Season 01 (2025) Completed
+│       │   ├── Hazbin Hotel Season 01 (2024) Completed
+│       │   ├── Pantheon Season 02 (2023) Completed
+│       │   ├── Star Wars The Clone Wars Season 06 (2014) Completed
+│       │   └── The Creature Cases Season 01 (2022) Completed
+│       ├── Anime
+│       │   ├── Detective Conan (Meitantei Conan)  Season 01 (1996) (Hindi  Dubbed) Completed
+│       │   └── Mashle Magic and Muscles Season 02 (2024) Completed
+│       ├── Award
+│       ├── Bangla Drama
+│       ├── Bangla
+│       │   ├── Bou Diaries Season 01 (2021) Completed
+│       │   ├── Dujone Season 01 (2021) Completed
+│       │   ├── Eken Babu Season 04 (2020) Completed
+│       │   ├── Kolkata
+│       │   │   └── Encrypted Season 01 (2022) Completed
+│       │   └── Morichika Season 01 (2021) Completed
+│       ├── Documentaries
+│       │   └── English
+│       │       ├── Marvel Studios Assembled Season 01 (2021) Completed
+│       │       ├── The Never Ending Murder Season 01 (2023) Completed
+│       │       └── The Tesla Files Season 01 (2018) Completed
+│       ├── Dual Audio
+│       │   ├── Bandidos Season 02 (2025) (Hindi & English) Completed
+│       │   ├── Berlin and the Lady with an Ermine (Berlin y la dama del armino) Season 01 (2026) (Hindi & English) Completed
+│       │   ├── Black Mirror Season 01 (2011) (Hindi & Enlish) Completed
+│       │   ├── D.P. Season 02 (2023) (Hindi & Korean) Completed
+│       │   ├── Found Season 02 (2025) (Hindi & English) Completed
+│       │   └── (12 more...)
+│       ├── English
+│       │   ├── 13 Reasons Why Season 04 (2020) Completed
+│       │   ├── A Million Little Things Season 04 (2021) Completed
+│       │   ├── Absentia Season 03 (2020) Completed
+│       │   ├── After Life Season 02 (2020) Completed
+│       │   ├── Agents of S H I E L D Season 01 (2013) Completed
+│       │   └── (51 more...)
+│       ├── Hindi
+│       │   ├── Aranyak Season 01 (2021) Completed
+│       │   ├── Chalo Koi Baat Nahi Season 01 (2021) Completed
+│       │   ├── Crushed Season 03 (2023) Completed
+│       │   ├── Delhi Khabbar Season 01 (2022) Completed
+│       │   ├── Devon Ke Dev Mahadev Season 01 (2011) Completed
+│       │   └── (12 more...)
+│       ├── Other Foreign
+│       │   ├── Brazil
+│       │   │   └── Criminal Code (DNA do Crime) Season 02 (2025) Completed
+│       │   ├── Control Z Season 01 (2020) Completed
+│       │   ├── Germany
+│       │   │   └── The Chemistry of Death (Chemistry of Death) Season 01 (2023) Completed
+│       │   ├── Japanese
+│       │   │   └── Glass Heart (Gurasu Haato) Season 01 (2025) Completed
+│       │   ├── Korean
+│       │   │   ├── Bloody Heart Season 01 (2022) Completed
+│       │   │   ├── Jumong Season 01 (2006) Completed
+│       │   │   │   ├── Jumong Season 01 (2006) Episodes (01-12)
+│       │   │   │   ├── Jumong Season 01 (2006) Episodes (13-24)
+│       │   │   │   ├── Jumong Season 01 (2006) Episodes (25-36)
+│       │   │   │   ├── Jumong Season 01 (2006) Episodes (37-48)
+│       │   │   │   ├── Jumong Season 01 (2006) Episodes (49-60)
+│       │   │   │   └── (2 more...)
+│       │   │   ├── My Perfect Stranger Season 01 (2023) Completed
+│       │   │   ├── Our Beloved Summer (Geu Hae Urineun) Season 01 (2021) Completed
+│       │   │   ├── The Atypical Family (Hi eo ro neun A nib ni da man) Season 01 (2024) Completed
+│       │   │   └── (3 more...)
+│       │   └── (5 more...)
+│       └── WWE
+│           ├── AEW Double Or Nothing
+│           ├── AEW Dynamite
+│           ├── WWE Friday Night SmackDown
+│           └── WWE Monday Night Raw
+├── iccftps10sasd8
+│   ├── Documentary
+│   │   └── English
+│   ├── Games
+│   │   └── Strategy Games
+│   ├── Movies
+│   │   ├── 3D
+│   │   │   └── English
+│   │   ├── 4K
+│   │   │   ├── Animated
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   ├── Korean
+│   │   │   ├── Other Foreign 
+│   │   │   └── (1 more...)
+│   │   ├── Animated
+│   │   ├── Anime
+│   │   ├── Bangla (BD)
+│   │   │   └── Mohua Sundori (2015)
+│   │   ├── Bangla (Kolkata)
+│   │   ├── Chinese
+│   │   ├── Documentary
+│   │   │   ├── Bangla
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   └── Other Foreign
+│   │   ├── Dual Audio
+│   │   ├── English
+│   │   ├── Exclusive Full HD
+│   │   │   ├── English
+│   │   │   ├── Hindi
+│   │   │   └── Other Foreign Movies
+│   │   │       └── Chinese
+│   │   ├── Hindi
+│   │   ├── Indonesian
+│   │   ├── Japanese
+│   │   ├── Korean
+│   │   ├── Other Foreign Movies
+│   │   │   ├── Argentina
+│   │   │   ├── Brazil
+│   │   │   ├── Denmark
+│   │   │   ├── Estonia
+│   │   │   ├── Finland
+│   │   │   └── (18 more...)
+│   │   ├── Pakistani
+│   │   ├── Punjabi Movies
+│   │   ├── South Indian (Hindi Dubbed)
+│   │   └── South Indian
+│   │       └── Malayalam
+│   ├── Software
+│   │   └── Adobe Collection
+│   └── Tv Show
+│       ├── Animation
+│       │   ├── Angry Birds Summer Madness Season 01 (2022) Completed
+│       │   ├── Dragons The Nine Realms Season 01 (2021) Completed
+│       │   ├── Jurassic World Chaos Theory Season 01 (2024) Completed
+│       │   ├── Splinter Cell Deathwatch Season 01 (2025) Completed
+│       │   └── The Simpsons Season 01 (1989) Completed
+│       ├── Anime
+│       │   ├── Leviathan Season 01 (2025) Completed
+│       │   ├── One Piece (One Piece Wan pisu) Season 01 (1999) Episodes (001-012)
+│       │   ├── One Piece (One Piece Wan pisu) Season 01 (1999) Episodes (013-024)
+│       │   ├── One Piece (One Piece Wan pisu) Season 01 (1999) Episodes (025-036)
+│       │   ├── One Piece (One Piece Wan pisu) Season 01 (1999) Episodes (037-048)
+│       │   └── (8 more...)
+│       ├── Award
+│       ├── Bangla Drama
+│       ├── Bangla
+│       │   ├── Bilaap Season 01 (2021) Completed
+│       │   ├── Bonyo Premer Golpo Season 02 (2020) Completed
+│       │   ├── Borof Koler Golpo Season 01 (2021) Completed
+│       │   ├── Contract Season 01 (2021) Completed
+│       │   └── Eken Babu Season 03 (2019) Completed
+│       ├── Dual Audio
+│       │   ├── A Private Affair (Un asunto privado) Season 01 (2022) (Hindi & English) Completed
+│       │   ├── Bad Boy Billionaires India Season 01 (2020) (Hindi & English) Completed
+│       │   ├── Bloodhounds (Sanyanggaedeul) Season 02 (2026) (Hindi & English) Completed
+│       │   ├── From Season 02 (2023) (Hindi & English) Completed
+│       │   ├── Mindhunter Season 01 (2017) (Hindi & English) Completed
+│       │   └── (10 more...)
+│       ├── English
+│       │   ├── 13 Reasons Why Season 01 (2017) Completed
+│       │   ├── American Gigolo Season 01 (2022) Completed
+│       │   ├── American Gods Season 02 (2019) Completed
+│       │   ├── Barry Season 02 (2019) Completed
+│       │   ├── Better Call Saul Season 05 (2020) Completed
+│       │   └── (49 more...)
+│       ├── Hindi
+│       │   ├── Asur Welcome to Your Dark Side Season 01 (2020) Completed
+│       │   ├── Bakaiti Season 01 (2025) Completed
+│       │   ├── Bandwaale Season 01 (2026) Completed
+│       │   ├── Bekaaboo Season 01 (2019) Completed
+│       │   ├── Breathe Into the Shadows Season 02 (2022) Completed
+│       │   └── (19 more...)
+│       ├── Others
+│       │   ├── France
+│       │   │   ├── Reign Supreme (Le monde de demain) Season 01 (2022) Completed
+│       │   │   └── Summer Of 36 (Lete 36) Season 01 (2026) Completed
+│       │   ├── Kannada
+│       │   │   └── Humble Politiciann Nograj Season 01 (2022) Completed
+│       │   ├── Korean
+│       │   │   ├── As You Stood By (Dangsini Jugyeossda) Season 01 (2025) Completed
+│       │   │   ├── Celebrity (Selleobeuriti) Season 01 (2023) Completed
+│       │   │   ├── Grid Season 01 (2022) Completed
+│       │   │   ├── Melo Movie Season 01 (2025) Completed
+│       │   │   ├── Move to Heaven Season 01 (2021) Completed
+│       │   │   └── (6 more...)
+│       │   ├── Pakistan
+│       │   │   └── Haara Dil Season 01 (2018) Completed
+│       │   ├── Poland
+│       │   │   └── High Water (Wielka woda) Season 01 (2022) Completed
+│       │   └── (3 more...)
+│       └── WWE
+│           ├── WWE Friday Night Smackdown
+│           ├── WWE Hell in a Cell
+│           └── WWE Monday Night Raw
+└── iccftps10sasd9
+    ├── Games
+    │   ├── Racing Games
+    │   └── Strategy Games
+    ├── Movies
+    │   ├── 3D
+    │   │   └── Animated
+    │   ├── 4K
+    │   │   ├── Animated
+    │   │   ├── English
+    │   │   ├── Hindi
+    │   │   ├── Punjabi
+    │   │   └── South Indian
+    │   ├── Animated
+    │   ├── Anime
+    │   ├── Bangla (BD)
+    │   ├── Bangla (Kolkata)
+    │   ├── Chinese
+    │   ├── Documentary
+    │   │   ├── Chinese
+    │   │   ├── English
+    │   │   └── Other Foreign
+    │   ├── Dual Audio
+    │   ├── English
+    │   ├── Full HD
+    │   │   └── English
+    │   ├── Hindi
+    │   ├── Indonesian
+    │   ├── Japanese 
+    │   ├── Korean
+    │   ├── Other Foreign Movies
+    │   │   ├──  Thailand
+    │   │   ├── Brazil
+    │   │   ├── Czech Republic
+    │   │   ├── Espagne
+    │   │   ├── Finland
+    │   │   └── (16 more...)
+    │   ├── Punjabi
+    │   ├── South Indian (Hindi Dubbed)
+    │   └── South Indian
+    └── TV Shows
+        ├── Animation
+        │   ├── Harley Quinn Season 03 (2022) Completed
+        │   ├── Justice League Season 03 (2004) Completed
+        │   ├── Kite Man Hell Yeah Season 01 (2024) Completed
+        │   ├── Mr Bean The Animated Series Season 02 (2003) Completed
+        │   └── WondLa Season 02 (2025) Completed
+        ├── Anime
+        │   ├── Komi Cant Communicate (Komi san wa Komyushou Desu) Season 01 (2021) Completed
+        │   └── Wolverine Season 01 (2011) Completed
+        ├── Bangla Drama
+        ├── Bangla
+        │   ├── Charer Master Season 01 (2021) Completed
+        │   ├── Feluda Pherot Chhinnomostar Obhishap Season 01 (2020) Completed
+        │   ├── Hello Season 03 (2017) Completed
+        │   ├── Laboni Season 01 (2021) Completed
+        │   ├── Paashbalish Season 01 (2024) Completed
+        │   └── (1 more...)
+        ├── Documentaries
+        │   └── The Lost Pirate Kingdom Season 01 (2021) Completed
+        ├── Dual Audio
+        │   ├── Black Rabbit Season 01 (2025) (Hindi & English) Completed
+        │   ├── Cangaco Novo (New Bandits) Season 01 (2023) (Hindi & English) Completed
+        │   ├── Cash Queens (Les Lionnes) Season 01 (2025) (Hindi & France) Completed
+        │   ├── Conversations with a Killer The Son of Sam Tapes Season 01 (2025) (Hindi & Englis) Completed
+        │   ├── Doctor John (Uisa Yohan) Season 01 (2019) (Hindi Dubbed) Completed
+        │   └── (12 more...)
+        ├── English
+        │   ├── Arrested Development Season 02 (2004) Completed
+        │   ├── Bates Motel Season 01 (2013) Completed
+        │   ├── Bates Motel Season 03 (2015) Completed
+        │   ├── Believe Me Season 01 (2026) Completed
+        │   ├── Blood Machines Season 01 (2019) Completed
+        │   └── (38 more...)
+        ├── Hindi
+        │   ├── Barun Rai and the House on the Cliff Season 01 (2021) Completed
+        │   ├── Chutzpah Season 01 (2021) Completed
+        │   ├── Fixerr Season 01 (2019) Completed
+        │   ├── Flames Season 01 (2018) Completed
+        │   ├── Fuh se Fantasy Season 02 (2023) Completed
+        │   └── (13 more...)
+        ├── Others
+        │   ├── Brazil
+        │   │   └── Invisible City (Cidade Invisivel) Season 01 (2021) Completed
+        │   ├── Gremany
+        │   │   ├── Das Boot Season 02 (2020) Completed
+        │   │   └── The Defeated (Shadowplay) Season 01 (2020) Completed
+        │   ├── Korean
+        │   │   ├── A Killer Paradox (Sarinja ng Nangam) Season 01 (2024) Completed
+        │   │   ├── Beyond the Bar Season 01 (2025) Completed
+        │   │   └── Extraordinary You (Eojjeoda Balgyeonhan Haru) Season 01 (2019) Completed
+        │   ├── Mouse (Mauseu) Season 01 (2021) Completed
+        │   ├── Punjabi
+        │   │   └── And They Occupied Me Season 01 (2022) Completed
+        │   └── (3 more...)
+        └── WWE
+            ├── WWE Friday Night SmackDown
+            ├── WWE Monday Night Raw
+            └── WWE Wrestlepalooza
