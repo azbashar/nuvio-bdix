@@ -1,6 +1,6 @@
 /**
  * iccftp-movies - Built from src/iccftp-movies/
- * Generated: 2026-07-14T12:11:13.316Z
+ * Generated: 2026-07-14T14:35:16.461Z
  */
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -46,9 +46,25 @@ var __async = (__this, __arguments, generator) => {
 };
 
 // src/iccftp-movies/constants.js
-var ROOTS = [
+var SERVER_ROOTS = [
+  // These contain share folders
   "http://10.16.100.206/ftps3/",
-  "http://10.16.100.202/ftps10/"
+  "http://10.16.100.202/ftps10/",
+  "http://10.16.100.213/iccftps13/",
+  "http://10.16.100.212/iccftps12/"
+];
+var DIRECT_MOVIE_ROOTS = [
+  // These are already the share folders
+  "http://10.16.100.248/ftps6d1/",
+  "http://10.16.100.248/ftps6d2/",
+  "http://10.16.100.248/ftps6d3/",
+  "http://10.16.100.248/ftps6d4/",
+  "http://10.16.100.248/ftps6d5/",
+  "http://10.16.100.241/ftps3d1/",
+  "http://10.16.100.241/ftps3d3/",
+  "http://10.16.100.241/ftps3d5/",
+  "http://10.16.100.250/ftps10d1/",
+  "http://10.16.100.250/ftps10d2/"
 ];
 var TMDB_API_KEY = "1865f43a0549ca50d341dd9ab8b29f49";
 var TMDB_BASE_URL = "https://api.themoviedb.org/3";
@@ -59,7 +75,7 @@ var VIDEO_EXTENSIONS = [
   ".m4v",
   ".mov"
 ];
-var CACHE_TTL = 15 * 60 * 1e3;
+var CACHE_TTL = 24 * 60 * 60 * 1e3;
 var REQUEST_HEADERS = {
   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
   "Accept": "text/html,application/json,*/*"
@@ -208,11 +224,13 @@ function qualityScore(q) {
 }
 function searchMoviesDirectory(directoryUrl, movie, results, visited) {
   return __async(this, null, function* () {
+    if (!directoryUrl.includes("/Movies/")) {
+      return;
+    }
     if (visited.has(directoryUrl)) {
       return;
     }
     visited.add(directoryUrl);
-    console.log(`Searching : ${directoryUrl}`);
     let entries = [];
     try {
       entries = yield fetchDirectory(
@@ -243,8 +261,9 @@ function searchMoviesDirectory(directoryUrl, movie, results, visited) {
       if (!isVideoFile(entry.name)) {
         continue;
       }
+      const filename = entry.name.split("/").pop();
       const parsed = parseMovieFilename(
-        entry.name
+        filename
       );
       if (!parsed) {
         continue;
@@ -275,39 +294,51 @@ function searchMoviesDirectory(directoryUrl, movie, results, visited) {
     }
   });
 }
-function processRoot(root, movie, results) {
+function processServerRoot(root, movie, results) {
   return __async(this, null, function* () {
-    let shares = [];
+    let shares;
     try {
-      shares = yield fetchDirectory(
-        root
-      );
+      shares = yield fetchDirectory(root);
     } catch (err) {
       console.error(
-        "[BDIX] Root error:",
+        "[BDIX] Server root failed:",
         root,
         err.message
       );
       return;
     }
     for (const share of shares) {
-      if (!share.isDirectory) {
+      if (!share.isDirectory)
         continue;
-      }
-      const moviesUrl = new URL(
-        `${share.href}Movies/`,
+      const shareUrl = new URL(
+        share.href,
         root
       ).href;
-      try {
-        yield searchMoviesDirectory(
-          moviesUrl,
-          movie,
-          results,
-          /* @__PURE__ */ new Set()
-        );
-      } catch (e) {
-      }
+      const moviesUrl = new URL(
+        "Movies/",
+        shareUrl
+      ).href;
+      yield searchMoviesDirectory(
+        moviesUrl,
+        movie,
+        results,
+        /* @__PURE__ */ new Set()
+      );
     }
+  });
+}
+function processDirectRoot(root, movie, results) {
+  return __async(this, null, function* () {
+    const moviesUrl = new URL(
+      "Movies/",
+      root
+    ).href;
+    yield searchMoviesDirectory(
+      moviesUrl,
+      movie,
+      results,
+      /* @__PURE__ */ new Set()
+    );
   });
 }
 function extractStreams(tmdbId) {
@@ -322,8 +353,15 @@ function extractStreams(tmdbId) {
       `[BDIX] Searching: ${movie.title} (${movie.year})`
     );
     const results = [];
-    for (const root of ROOTS) {
-      yield processRoot(
+    for (const root of SERVER_ROOTS) {
+      yield processServerRoot(
+        root,
+        movie,
+        results
+      );
+    }
+    for (const root of DIRECT_MOVIE_ROOTS) {
+      yield processDirectRoot(
         root,
         movie,
         results

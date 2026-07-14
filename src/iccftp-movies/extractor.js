@@ -1,6 +1,10 @@
 import {
-    ROOTS,
     VIDEO_EXTENSIONS
+} from "./constants.js";
+
+import {
+    SERVER_ROOTS,
+    DIRECT_MOVIE_ROOTS
 } from "./constants.js";
 
 import {
@@ -37,12 +41,15 @@ async function searchMoviesDirectory(
     results,
     visited
 ) {
+    if (!directoryUrl.includes("/Movies/")) {
+        return;
+    }
     if (visited.has(directoryUrl)) {
         return;
     }
 
     visited.add(directoryUrl);
-    console.log(`Searching : ${directoryUrl}`);
+    // console.log(`Searching : ${directoryUrl}`);
 
     let entries = [];
 
@@ -61,6 +68,7 @@ async function searchMoviesDirectory(
     }
 
     for (const entry of entries) {
+        
         const fullUrl =
             new URL(
                 entry.href,
@@ -88,10 +96,14 @@ async function searchMoviesDirectory(
             continue;
         }
 
+        const filename =
+        entry.name.split("/").pop();
+
         const parsed =
             parseMovieFilename(
-                entry.name
+                filename
             );
+        
 
         if (!parsed) {
             continue;
@@ -133,50 +145,80 @@ async function searchMoviesDirectory(
     }
 }
 
-async function processRoot(
-    root,
-    movie,
-    results
-) {
-    let shares = [];
+async function processServerRoot(root, movie, results) {
+
+    let shares;
 
     try {
-        shares =
-            await fetchDirectory(
-                root
-            );
+        shares = await fetchDirectory(root);
     } catch (err) {
         console.error(
-            "[BDIX] Root error:",
+            "[BDIX] Server root failed:",
             root,
             err.message
         );
-
         return;
     }
 
-    for (const share of shares) {
-        if (!share.isDirectory) {
-            continue;
-        }
 
-        const moviesUrl =
+    for (const share of shares) {
+
+        if (!share.isDirectory)
+            continue;
+
+
+        const shareUrl =
             new URL(
-                `${share.href}Movies/`,
+                share.href,
                 root
             ).href;
 
-        try {
-            await searchMoviesDirectory(
-                moviesUrl,
-                movie,
-                results,
-                new Set()
-            );
-        } catch {
-            // share may not have Movies/
-        }
+
+        const moviesUrl =
+            new URL(
+                "Movies/",
+                shareUrl
+            ).href;
+
+
+        // console.log(
+        //     "[BDIX] Entering Movies:",
+        //     moviesUrl
+        // );
+
+
+        await searchMoviesDirectory(
+            moviesUrl,
+            movie,
+            results,
+            new Set()
+        );
     }
+}
+
+
+
+async function processDirectRoot(root, movie, results) {
+
+    const moviesUrl =
+        new URL(
+            "Movies/",
+            root
+        ).href;
+
+
+    // console.log(
+    //     "[BDIX] Entering Movies:",
+    //     moviesUrl
+    // );
+
+
+    await searchMoviesDirectory(
+        moviesUrl,
+        movie,
+        results,
+        new Set()
+    );
 }
 
 export async function extractStreams(
@@ -197,12 +239,26 @@ export async function extractStreams(
 
     const results = [];
 
-    for (const root of ROOTS) {
-        await processRoot(
+    for (const root of SERVER_ROOTS) {
+
+        await processServerRoot(
             root,
             movie,
             results
         );
+
+    }
+
+
+
+    for (const root of DIRECT_MOVIE_ROOTS) {
+
+        await processDirectRoot(
+            root,
+            movie,
+            results
+        );
+
     }
 
     results.sort((a, b) => {
