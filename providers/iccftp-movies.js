@@ -1,6 +1,6 @@
 /**
  * iccftp-movies - Built from src/iccftp-movies/
- * Generated: 2026-07-14T15:13:38.911Z
+ * Generated: 2026-10-31T14:14:57.553Z
  */
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -8,6 +8,10 @@ var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
 var __copyProps = (to, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
@@ -24,6 +28,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -44,6 +49,13 @@ var __async = (__this, __arguments, generator) => {
     step((generator = generator.apply(__this, __arguments)).next());
   });
 };
+
+// src/iccftp-movies/index.js
+var iccftp_movies_exports = {};
+__export(iccftp_movies_exports, {
+  getStreams: () => getStreams
+});
+module.exports = __toCommonJS(iccftp_movies_exports);
 
 // src/iccftp-movies/constants.js
 var SERVER_ROOTS = [
@@ -68,6 +80,7 @@ var DIRECT_MOVIE_ROOTS = [
 ];
 var TMDB_API_KEY = "1865f43a0549ca50d341dd9ab8b29f49";
 var TMDB_BASE_URL = "https://api.themoviedb.org/3";
+var MOVIES_INDEX_URL = "https://raw.githubusercontent.com/azbashar/nuvio-bdix/refs/heads/main/movies_index.json";
 var VIDEO_EXTENSIONS = [
   ".mkv",
   ".mp4",
@@ -75,15 +88,13 @@ var VIDEO_EXTENSIONS = [
   ".m4v",
   ".mov"
 ];
-var CACHE_TTL = 24 * 60 * 60 * 1e3;
 var REQUEST_HEADERS = {
   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
   "Accept": "text/html,application/json,*/*"
 };
 
 // src/iccftp-movies/utils.js
-var import_cheerio_without_node_native = __toESM(require("cheerio-without-node-native"));
-var DIRECTORY_CACHE = /* @__PURE__ */ new Map();
+var import_cheerio_without_node_native = __toESM(require("cheerio-without-node-native"), 1);
 function fetchTmdbDetails(tmdbId) {
   return __async(this, null, function* () {
     try {
@@ -160,13 +171,13 @@ function parseMovieFilename(filename) {
 }
 function fetchDirectory(url) {
   return __async(this, null, function* () {
-    const cached = DIRECTORY_CACHE.get(url);
-    if (cached && cached.expires > Date.now()) {
-      return cached.data;
-    }
-    const html = yield fetch(url, {
+    const res = yield fetch(url, {
       headers: REQUEST_HEADERS
-    }).then((r) => r.text());
+    });
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}`);
+    }
+    const html = yield res.text();
     const $ = import_cheerio_without_node_native.default.load(html);
     const entries = [];
     $("a").each((_, el) => {
@@ -189,10 +200,6 @@ function fetchDirectory(url) {
         isDirectory: href.endsWith("/")
       });
     });
-    DIRECTORY_CACHE.set(url, {
-      data: entries,
-      expires: Date.now() + CACHE_TTL
-    });
     return entries;
   });
 }
@@ -205,115 +212,249 @@ function buildStream(url, movieTitle, year, quality, file) {
     provider: "bdix"
   };
 }
+function qualityScore(quality) {
+  if (!quality)
+    return 0;
+  const num = parseInt(quality, 10);
+  return Number.isNaN(num) ? 0 : num;
+}
+function finalizeStreams(streams) {
+  const sorted = [...streams].sort(
+    (a, b) => qualityScore(b.quality) - qualityScore(a.quality)
+  );
+  const unique = /* @__PURE__ */ new Map();
+  for (const stream of sorted) {
+    if (!unique.has(stream.url)) {
+      unique.set(stream.url, stream);
+    }
+  }
+  return Array.from(unique.values());
+}
 
-// src/iccftp-movies/extractor.js
+// src/iccftp-movies/catalog.js
 function isVideoFile(name) {
   const lower = name.toLowerCase();
   return VIDEO_EXTENSIONS.some((ext) => lower.endsWith(ext));
 }
-function qualityScore(q) {
-  if (!q)
-    return 0;
-  const num = parseInt(q);
-  if (Number.isNaN(num)) {
-    return 0;
+function crawlCatalog() {
+  return __async(this, arguments, function* ({
+    concurrency = 8,
+    onProgress,
+    match
+  } = {}) {
+    const queue = [];
+    const visited = /* @__PURE__ */ new Set();
+    const movies = [];
+    const seenUrls = /* @__PURE__ */ new Set();
+    let directories = 0;
+    for (const root of SERVER_ROOTS) {
+      let shares;
+      try {
+        shares = yield fetchDirectory(root);
+      } catch (err) {
+        console.error("[BDIX] Server root failed:", root, err.message);
+        continue;
+      }
+      for (const share of shares) {
+        if (!share.isDirectory)
+          continue;
+        const shareUrl = new URL(share.href, root).href;
+        queue.push(new URL("Movies/", shareUrl).href);
+      }
+    }
+    for (const root of DIRECT_MOVIE_ROOTS) {
+      queue.push(new URL("Movies/", root).href);
+    }
+    function crawl(directoryUrl) {
+      return __async(this, null, function* () {
+        if (!directoryUrl.includes("/Movies/"))
+          return;
+        if (visited.has(directoryUrl))
+          return;
+        visited.add(directoryUrl);
+        let entries;
+        try {
+          entries = yield fetchDirectory(directoryUrl);
+        } catch (err) {
+          console.error("[BDIX] Failed:", directoryUrl, err.message);
+          return;
+        }
+        for (const entry of entries) {
+          const fullUrl = new URL(entry.href, directoryUrl).toString();
+          if (entry.isDirectory) {
+            queue.push(fullUrl);
+            continue;
+          }
+          if (!isVideoFile(entry.name))
+            continue;
+          const filename = entry.name.split("/").pop();
+          const parsed = parseMovieFilename(filename);
+          if (!parsed)
+            continue;
+          if (match && !match(parsed))
+            continue;
+          if (seenUrls.has(fullUrl))
+            continue;
+          seenUrls.add(fullUrl);
+          movies.push({
+            title: parsed.title,
+            year: parsed.year,
+            quality: parsed.quality,
+            url: fullUrl,
+            filename
+          });
+        }
+        directories++;
+        if (onProgress) {
+          onProgress({
+            directories,
+            queued: queue.length,
+            movies: movies.length,
+            url: directoryUrl
+          });
+        }
+      });
+    }
+    let cursor = 0;
+    function worker() {
+      return __async(this, null, function* () {
+        while (cursor < queue.length) {
+          const url = queue[cursor++];
+          yield crawl(url);
+        }
+      });
+    }
+    const workers = Math.max(1, concurrency);
+    yield Promise.all(Array.from({ length: workers }, () => worker()));
+    return movies;
+  });
+}
+
+// src/iccftp-movies/movies-index.js
+var MIN_TITLE_SIMILARITY = 0.8;
+function loadMovieIndex() {
+  return __async(this, null, function* () {
+    const res = yield fetch(MOVIES_INDEX_URL, {
+      headers: {
+        Accept: "application/json"
+      }
+    });
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}`);
+    }
+    const data = yield res.json();
+    if (!data || typeof data.titles !== "object" || data.titles === null) {
+      throw new Error("invalid index format");
+    }
+    return data;
+  });
+}
+function safeDecode(value) {
+  try {
+    return decodeURIComponent(value);
+  } catch (e) {
+    return value;
   }
-  return num;
 }
-function searchMoviesDirectory(directoryUrl, movie, results, visited) {
+function entryToStream(entry, movie) {
+  const year = entry[0] || movie.year;
+  const quality = entry[1] || "Auto";
+  const url = entry[2];
+  const filename = safeDecode(url.split("/").pop());
+  return buildStream(url, movie.title, year, quality, filename);
+}
+function titleMatches(movie, normalizedTitle) {
+  if (titleSimilarity(movie.title, normalizedTitle) >= MIN_TITLE_SIMILARITY) {
+    return true;
+  }
+  return Boolean(movie.originalTitle) && titleSimilarity(movie.originalTitle, normalizedTitle) >= MIN_TITLE_SIMILARITY;
+}
+function entriesForYear(index, year) {
+  const entries = [];
+  for (const [title, list] of Object.entries(index.titles)) {
+    for (const entry of list) {
+      if (entry[0] && year && entry[0] !== year)
+        continue;
+      entries.push([title, entry]);
+    }
+  }
+  return entries;
+}
+function searchMovieIndex(movie) {
   return __async(this, null, function* () {
-    if (!directoryUrl.includes("/Movies/")) {
-      return;
-    }
-    if (visited.has(directoryUrl)) {
-      return;
-    }
-    visited.add(directoryUrl);
-    let entries = [];
-    try {
-      entries = yield fetchDirectory(directoryUrl);
-    } catch (err) {
-      console.error("[BDIX] Failed:", directoryUrl, err.message);
-      return;
-    }
-    for (const entry of entries) {
-      const fullUrl = new URL(entry.href, directoryUrl).toString();
-      if (entry.isDirectory) {
-        yield searchMoviesDirectory(fullUrl, movie, results, visited);
+    const index = yield loadMovieIndex();
+    const keys = [movie.title, movie.originalTitle].filter(Boolean).map(normalizeTitle).filter((key, i, all) => key && all.indexOf(key) === i);
+    const results = [];
+    for (const key of keys) {
+      const entries = index.titles[key];
+      if (!entries)
         continue;
+      for (const entry of entries) {
+        if (entry[0] && movie.year && entry[0] !== movie.year)
+          continue;
+        results.push(entryToStream(entry, movie));
       }
-      if (!isVideoFile(entry.name)) {
-        continue;
-      }
-      const filename = entry.name.split("/").pop();
-      const parsed = parseMovieFilename(filename);
-      if (!parsed) {
-        continue;
-      }
-      const titleMatch = isGoodMatch(
-        movie.title,
-        movie.year,
-        parsed.title,
-        parsed.year
-      );
-      const originalMatch = movie.originalTitle && movie.originalTitle !== movie.title && isGoodMatch(movie.originalTitle, movie.year, parsed.title, parsed.year);
-      if (!titleMatch && !originalMatch) {
-        continue;
-      }
-      results.push(
-        buildStream(fullUrl, parsed.title, parsed.year, parsed.quality, parsed.title)
-      );
     }
+    if (results.length > 0) {
+      return finalizeStreams(results);
+    }
+    for (const [title, entry] of entriesForYear(index, movie.year)) {
+      if (!titleMatches(movie, title))
+        continue;
+      results.push(entryToStream(entry, movie));
+    }
+    return finalizeStreams(results);
   });
 }
-function processServerRoot(root, movie, results) {
-  return __async(this, null, function* () {
-    let shares;
-    try {
-      shares = yield fetchDirectory(root);
-    } catch (err) {
-      console.error("[BDIX] Server root failed:", root, err.message);
-      return;
-    }
-    for (const share of shares) {
-      if (!share.isDirectory)
-        continue;
-      const shareUrl = new URL(share.href, root).href;
-      const moviesUrl = new URL("Movies/", shareUrl).href;
-      yield searchMoviesDirectory(moviesUrl, movie, results, /* @__PURE__ */ new Set());
-    }
-  });
-}
-function processDirectRoot(root, movie, results) {
-  return __async(this, null, function* () {
-    const moviesUrl = new URL("Movies/", root).href;
-    yield searchMoviesDirectory(moviesUrl, movie, results, /* @__PURE__ */ new Set());
-  });
-}
+
+// src/iccftp-movies/extractor.js
 function extractStreams(tmdbId) {
   return __async(this, null, function* () {
     const movie = yield fetchTmdbDetails(tmdbId);
     if (!movie) {
       return [];
     }
-    console.log(`[BDIX] Searching: ${movie.title} (${movie.year})`);
-    const results = [];
-    for (const root of SERVER_ROOTS) {
-      yield processServerRoot(root, movie, results);
-    }
-    for (const root of DIRECT_MOVIE_ROOTS) {
-      yield processDirectRoot(root, movie, results);
-    }
-    results.sort((a, b) => {
-      return qualityScore(b.quality) - qualityScore(a.quality);
-    });
-    const unique = /* @__PURE__ */ new Map();
-    for (const stream of results) {
-      if (!unique.has(stream.url)) {
-        unique.set(stream.url, stream);
+    try {
+      const indexed = yield searchMovieIndex(movie);
+      if (indexed.length > 0) {
+        console.log(
+          `[BDIX] Index hit: ${movie.title} (${movie.year}) -> ${indexed.length} stream(s)`
+        );
+        return indexed;
       }
+      console.log(
+        `[BDIX] Index miss: ${movie.title} (${movie.year}), crawling servers`
+      );
+    } catch (err) {
+      console.error(
+        "[BDIX] Index unavailable, crawling servers:",
+        err.message
+      );
     }
-    return Array.from(unique.values());
+    const matches = yield crawlCatalog({
+      match: (candidate) => isGoodMatch(
+        movie.title,
+        movie.year,
+        candidate.title,
+        candidate.year
+      ) || movie.originalTitle && movie.originalTitle !== movie.title && isGoodMatch(
+        movie.originalTitle,
+        movie.year,
+        candidate.title,
+        candidate.year
+      )
+    });
+    return finalizeStreams(
+      matches.map(
+        (candidate) => buildStream(
+          candidate.url,
+          candidate.title,
+          candidate.year,
+          candidate.quality,
+          candidate.filename
+        )
+      )
+    );
   });
 }
 
@@ -332,4 +473,3 @@ function getStreams(tmdbId, mediaType) {
     }
   });
 }
-module.exports = { getStreams };

@@ -2,11 +2,8 @@ import cheerio from "cheerio-without-node-native";
 import {
     TMDB_BASE_URL,
     TMDB_API_KEY,
-    CACHE_TTL,
     REQUEST_HEADERS
 } from "./constants.js";
-
-const DIRECTORY_CACHE = new Map();
 
 export async function fetchTmdbDetails(tmdbId) {
     try {
@@ -137,18 +134,15 @@ export function getQuality(filename) {
 }
 
 export async function fetchDirectory(url) {
-    const cached = DIRECTORY_CACHE.get(url);
+    const res = await fetch(url, {
+        headers: REQUEST_HEADERS
+    });
 
-    if (
-        cached &&
-        cached.expires > Date.now()
-    ) {
-        return cached.data;
+    if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
     }
 
-    const html = await fetch(url, {
-        headers: REQUEST_HEADERS
-    }).then(r => r.text());
+    const html = await res.text();
 
     const $ = cheerio.load(html);
 
@@ -184,11 +178,6 @@ export async function fetchDirectory(url) {
         });
     });
 
-    DIRECTORY_CACHE.set(url, {
-        data: entries,
-        expires: Date.now() + CACHE_TTL
-    });
-
     return entries;
 }
 
@@ -207,4 +196,31 @@ export function buildStream(
         quality,
         provider: "bdix",
     };
+}
+
+function qualityScore(quality) {
+    if (!quality) return 0;
+
+    const num = parseInt(quality, 10);
+
+    return Number.isNaN(num) ? 0 : num;
+}
+
+/**
+ * Sorts by quality (best first) and removes duplicate URLs.
+ */
+export function finalizeStreams(streams) {
+    const sorted = [...streams].sort(
+        (a, b) => qualityScore(b.quality) - qualityScore(a.quality)
+    );
+
+    const unique = new Map();
+
+    for (const stream of sorted) {
+        if (!unique.has(stream.url)) {
+            unique.set(stream.url, stream);
+        }
+    }
+
+    return Array.from(unique.values());
 }

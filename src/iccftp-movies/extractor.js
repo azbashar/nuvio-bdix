@@ -1,139 +1,12 @@
-import { VIDEO_EXTENSIONS } from "./constants.js";
-
-import { SERVER_ROOTS, DIRECT_MOVIE_ROOTS } from "./constants.js";
+import { crawlCatalog } from "./catalog.js";
+import { searchMovieIndex } from "./movies-index.js";
 
 import {
   fetchTmdbDetails,
-  fetchDirectory,
-  parseMovieFilename,
   isGoodMatch,
   buildStream,
+  finalizeStreams,
 } from "./utils.js";
-
-function isVideoFile(name) {
-  const lower = name.toLowerCase();
-
-  return VIDEO_EXTENSIONS.some((ext) => lower.endsWith(ext));
-}
-
-function qualityScore(q) {
-  if (!q) return 0;
-
-  const num = parseInt(q);
-
-  if (Number.isNaN(num)) {
-    return 0;
-  }
-
-  return num;
-}
-
-async function searchMoviesDirectory(directoryUrl, movie, results, visited) {
-  if (!directoryUrl.includes("/Movies/")) {
-    return;
-  }
-  if (visited.has(directoryUrl)) {
-    return;
-  }
-
-  visited.add(directoryUrl);
-  // console.log(`Searching : ${directoryUrl}`);
-
-  let entries = [];
-
-  try {
-    entries = await fetchDirectory(directoryUrl);
-  } catch (err) {
-    console.error("[BDIX] Failed:", directoryUrl, err.message);
-
-    return;
-  }
-
-  for (const entry of entries) {
-    const fullUrl = new URL(entry.href, directoryUrl).toString();
-
-    //
-    // recurse folders
-    //
-    if (entry.isDirectory) {
-      await searchMoviesDirectory(fullUrl, movie, results, visited);
-
-      continue;
-    }
-
-    //
-    // skip non-video files
-    //
-    if (!isVideoFile(entry.name)) {
-      continue;
-    }
-
-    const filename = entry.name.split("/").pop();
-
-    const parsed = parseMovieFilename(filename);
-
-    if (!parsed) {
-      continue;
-    }
-
-    const titleMatch = isGoodMatch(
-      movie.title,
-      movie.year,
-      parsed.title,
-      parsed.year
-    );
-
-    const originalMatch =
-      movie.originalTitle &&
-      movie.originalTitle !== movie.title &&
-      isGoodMatch(movie.originalTitle, movie.year, parsed.title, parsed.year);
-
-    if (!titleMatch && !originalMatch) {
-      continue;
-    }
-
-    results.push(
-      buildStream(fullUrl, parsed.title, parsed.year, parsed.quality, filename)
-    );
-  }
-}
-
-async function processServerRoot(root, movie, results) {
-  let shares;
-
-  try {
-    shares = await fetchDirectory(root);
-  } catch (err) {
-    console.error("[BDIX] Server root failed:", root, err.message);
-    return;
-  }
-
-  for (const share of shares) {
-    if (!share.isDirectory) continue;
-
-    const shareUrl = new URL(share.href, root).href;
-
-    const moviesUrl = new URL("Movies/", shareUrl).href;
-
-    // console.log(
-    //     "[BDIX] Entering Movies:",
-    //     moviesUrl
-    // );
-
-    await searchMoviesDirectory(moviesUrl, movie, results, new Set());
-  }
-}
-
-async function processDirectRoot(root, movie, results) {
-  const moviesUrl = new URL("Movies/", root).href;
-
-  // console.log(
-  //     "[BDIX] Entering Movies:",
-  //     moviesUrl
-  // );
-
-  await searchMoviesDirectory(moviesUrl, movie, results, new Set());
-}
 
 export async function extractStreams(tmdbId) {
   const movie = await fetchTmdbDetails(tmdbId);
@@ -142,29 +15,60 @@ export async function extractStreams(tmdbId) {
     return [];
   }
 
-  console.log(`[BDIX] Searching: ${movie.title} (${movie.year})`);
+  //
+  // 1. Pre-built index (fast path)
+  //
+  try {
+    const indexed = await searchMovieIndex(movie);
 
-  const results = [];
+    if (indexed.length > 0) {
+      console.log(
+        `[BDIX] Index hit: ${movie.title} (${movie.year}) -> ${indexed.length} stream(s)`
+      );
 
-  for (const root of SERVER_ROOTS) {
-    await processServerRoot(root, movie, results);
+      return indexed;
+    }
+
+    console.log(
+      `[BDIX] Index miss: ${movie.title} (${movie.year}), crawling servers`
+    );
+  } catch (err) {
+    console.error(
+      "[BDIX] Index unavailable, crawling servers:",
+      err.message
+    );
   }
 
-  for (const root of DIRECT_MOVIE_ROOTS) {
-    await processDirectRoot(root, movie, results);
-  }
-
-  results.sort((a, b) => {
-    return qualityScore(b.quality) - qualityScore(a.quality);
+  //
+  // 2. Live crawl fallback
+  //
+  const matches = await crawlCatalog({
+    match: (candidate) =>
+      isGoodMatch(
+        movie.title,
+        movie.year,
+        candidate.title,
+        candidate.year
+      ) ||
+      (movie.originalTitle &&
+        movie.originalTitle !== movie.title &&
+        isGoodMatch(
+          movie.originalTitle,
+          movie.year,
+          candidate.title,
+          candidate.year
+        )),
   });
 
-  const unique = new Map();
-
-  for (const stream of results) {
-    if (!unique.has(stream.url)) {
-      unique.set(stream.url, stream);
-    }
-  }
-
-  return Array.from(unique.values());
+  return finalizeStreams(
+    matches.map((candidate) =>
+      buildStream(
+        candidate.url,
+        candidate.title,
+        candidate.year,
+        candidate.quality,
+        candidate.filename
+      )
+    )
+  );
 }

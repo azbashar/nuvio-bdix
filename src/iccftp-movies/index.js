@@ -15,4 +15,4 @@ async function getStreams(tmdbId, mediaType) {
     }
 }
 
-module.exports = { getStreams };
+export { getStreams };

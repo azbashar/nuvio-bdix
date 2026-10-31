@@ -161,6 +161,28 @@ Automatically rebuilds when files change.
 npm run build:watch
 ```
 
+### ICCFTP movie index
+
+`iccftp-movies` first looks movies up in a pre-built JSON catalog hosted on
+GitHub. Only when the movie is not in the catalog does it crawl the file
+servers, so most lookups avoid walking the whole directory tree.
+
+Regenerate the catalog after the servers change, then commit and push
+`movies_index.json`:
+
+```bash
+npm run build:index
+git add movies_index.json && git commit -m "Update movie index" && git push
+```
+
+The index is served from:
+
+```
+https://raw.githubusercontent.com/azbashar/nuvio-bdix/refs/heads/main/movies_index.json
+```
+
+Configure it in `src/iccftp-movies/constants.js` (`MOVIES_INDEX_URL`).
+
 ---
 
 ## Testing
