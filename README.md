@@ -167,13 +167,21 @@ npm run build:watch
 GitHub. Only when the movie is not in the catalog does it crawl the file
 servers, so most lookups avoid walking the whole directory tree.
 
-Regenerate the catalog after the servers change, then commit and push
-`movies_index.json`:
+Regenerate the catalog after the servers change:
 
 ```bash
+# crawl, commit and push movies_index.json
+./scripts/update-index.sh
+
+# crawl and commit only (push later yourself)
+./scripts/update-index.sh --no-push
+
+# only regenerate the file, no git operations
 npm run build:index
-git add movies_index.json && git commit -m "Update movie index" && git push
 ```
+
+The script skips the commit when the catalog is unchanged (the
+`generatedAt` timestamp is preserved in that case).
 
 The index is served from:
 

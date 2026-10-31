@@ -70,9 +70,23 @@ for (const key of Object.keys(titles).sort()) {
     .sort((a, b) => b[0] - a[0] || a[2].localeCompare(b[2]));
 }
 
+// Keep the previous timestamp when the catalog itself did not change, so
+// re-running the generator does not create empty commits.
+let previous = null;
+
+try {
+  previous = JSON.parse(fs.readFileSync(outFile, "utf8"));
+} catch {
+  // no (valid) previous index
+}
+
+const unchanged =
+  previous !== null &&
+  JSON.stringify(previous.titles) === JSON.stringify(sortedTitles);
+
 const payload = {
   version: 1,
-  generatedAt: new Date().toISOString(),
+  generatedAt: unchanged ? previous.generatedAt : new Date().toISOString(),
   count: movies.length,
   titles: sortedTitles,
 };
@@ -88,3 +102,7 @@ console.log(
     Object.keys(sortedTitles).length
   } title keys, ${(sizeBytes / 1024 / 1024).toFixed(2)} MB in ${elapsed}s`
 );
+
+if (unchanged) {
+  console.log("[index] catalog unchanged (kept previous generatedAt)");
+}
