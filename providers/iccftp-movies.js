@@ -1,6 +1,6 @@
 /**
  * iccftp-movies - Built from src/iccftp-movies/
- * Generated: 2026-10-31T14:14:57.553Z
+ * Generated: 2026-11-01T14:56:42.281Z
  */
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -57,16 +57,17 @@ __export(iccftp_movies_exports, {
 });
 module.exports = __toCommonJS(iccftp_movies_exports);
 
-// src/iccftp-movies/constants.js
+// src/shared/config.js
 var SERVER_ROOTS = [
   // These contain share folders
   "http://10.16.100.206/ftps3/",
   "http://10.16.100.202/ftps10/",
-  "http://10.16.100.213/iccftps13/",
+  // Temporarily disabled: server was unreachable (new link TBD).
+  // "http://10.16.100.213/iccftps13/",
   "http://10.16.100.212/iccftps12/"
 ];
-var DIRECT_MOVIE_ROOTS = [
-  // These are already the share folders
+var DIRECT_ROOTS = [
+  // These are already share folders
   "http://10.16.100.248/ftps6d1/",
   "http://10.16.100.248/ftps6d2/",
   "http://10.16.100.248/ftps6d3/",
@@ -80,7 +81,6 @@ var DIRECT_MOVIE_ROOTS = [
 ];
 var TMDB_API_KEY = "1865f43a0549ca50d341dd9ab8b29f49";
 var TMDB_BASE_URL = "https://api.themoviedb.org/3";
-var MOVIES_INDEX_URL = "https://raw.githubusercontent.com/azbashar/nuvio-bdix/refs/heads/main/movies_index.json";
 var VIDEO_EXTENSIONS = [
   ".mkv",
   ".mp4",
@@ -92,6 +92,10 @@ var REQUEST_HEADERS = {
   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
   "Accept": "text/html,application/json,*/*"
 };
+
+// src/iccftp-movies/constants.js
+var DIRECT_MOVIE_ROOTS = DIRECT_ROOTS;
+var MOVIES_INDEX_URL = "https://raw.githubusercontent.com/azbashar/nuvio-bdix/refs/heads/main/movies_index.json";
 
 // src/iccftp-movies/utils.js
 var import_cheerio_without_node_native = __toESM(require("cheerio-without-node-native"), 1);

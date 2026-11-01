@@ -84,6 +84,24 @@ const unchanged =
   previous !== null &&
   JSON.stringify(previous.titles) === JSON.stringify(sortedTitles);
 
+// Never replace a good index with a much smaller one because a share or a
+// whole server was temporarily unavailable. Set BDIX_ALLOW_PARTIAL=1 to
+// override this check.
+if (
+  process.env.BDIX_ALLOW_PARTIAL !== "1" &&
+  previous &&
+  previous.count > 0 &&
+  movies.length < previous.count * 0.95
+) {
+  console.error(
+    `[index] refusing to write a partial index: ${movies.length} movies < ` +
+      `${previous.count} previous. Retry when all servers are reachable, ` +
+      `or set BDIX_ALLOW_PARTIAL=1 to force it.`
+  );
+
+  process.exit(1);
+}
+
 const payload = {
   version: 1,
   generatedAt: unchanged ? previous.generatedAt : new Date().toISOString(),

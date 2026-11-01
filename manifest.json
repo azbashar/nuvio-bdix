@@ -27,6 +27,30 @@
       "supportsExternalPlayer": true
     },
     {
+      "id": "iccftp-series",
+      "name": "🇧🇩 ICCFTP Series",
+      "description": "Scrapes and streams TV shows from the ICCFTP HTTP file server.",
+      "version": "1.0.0",
+      "author": "azbashar",
+      "supportedTypes": [
+        "tv"
+      ],
+      "filename": "providers/iccftp-series.js",
+      "enabled": true,
+      "logo": "",
+      "contentLanguage": [
+        "en"
+      ],
+      "formats": [
+        "mp4",
+        "mkv",
+        "avi"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true
+    },
+    {
       "id": "template-provider",
       "name": "Template Provider",
       "description": "A starter template for creating Nuvio providers.",

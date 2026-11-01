@@ -7,6 +7,8 @@
         "build:watch": "nodemon --watch src -e js,json --exec 'node build.js'",
         "build:provider": "node build.js",
         "build:index": "node scripts/generate-movies-index.mjs",
+        "build:series-index": "node scripts/generate-series-index.mjs",
+        "build:indexes": "node scripts/generate-movies-index.mjs && node scripts/generate-series-index.mjs",
         "start": "node server.js"
     },
     "devDependencies": {

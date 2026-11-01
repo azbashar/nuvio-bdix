@@ -161,35 +161,44 @@ Automatically rebuilds when files change.
 npm run build:watch
 ```
 
-### ICCFTP movie index
+### ICCFTP indexes
 
-`iccftp-movies` first looks movies up in a pre-built JSON catalog hosted on
-GitHub. Only when the movie is not in the catalog does it crawl the file
-servers, so most lookups avoid walking the whole directory tree.
+`iccftp-movies` and `iccftp-series` first look titles up in pre-built JSON
+catalogs hosted on GitHub. Only when the title (and season/episode) is not
+in the catalog does the provider crawl the file servers, so most lookups
+avoid walking the whole directory tree.
 
-Regenerate the catalog after the servers change:
+Regenerate the catalogs after the servers change:
 
 ```bash
-# crawl, commit and push movies_index.json
+# crawl, commit and push movies_index.json + series_index.json
 ./scripts/update-index.sh
 
 # crawl and commit only (push later yourself)
 ./scripts/update-index.sh --no-push
 
-# only regenerate the file, no git operations
+# only regenerate the files, no git operations
+npm run build:indexes
+
+# or separately
 npm run build:index
+npm run build:series-index
 ```
 
-The script skips the commit when the catalog is unchanged (the
-`generatedAt` timestamp is preserved in that case).
+The script skips the commit when both catalogs are unchanged (the
+`generatedAt` timestamp is preserved in that case). Both generators refuse
+to overwrite a good index with a much smaller one when a server is down;
+set `BDIX_ALLOW_PARTIAL=1` to force it.
 
-The index is served from:
+The indexes are served from:
 
 ```
 https://raw.githubusercontent.com/azbashar/nuvio-bdix/refs/heads/main/movies_index.json
+https://raw.githubusercontent.com/azbashar/nuvio-bdix/refs/heads/main/series_index.json
 ```
 
-Configure it in `src/iccftp-movies/constants.js` (`MOVIES_INDEX_URL`).
+Configure them in `src/iccftp-movies/constants.js` (`MOVIES_INDEX_URL`) and
+`src/iccftp-series/constants.js` (`SERIES_INDEX_URL`).
 
 ---
 

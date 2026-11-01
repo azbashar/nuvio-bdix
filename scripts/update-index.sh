@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #
-# Regenerates movies_index.json and (optionally) commits + pushes it.
+# Regenerates movies_index.json and series_index.json, then (optionally)
+# commits + pushes them.
 #
 # Usage:
 #   ./scripts/update-index.sh             # rebuild, commit, push to origin/main
@@ -8,6 +9,7 @@
 #
 # Env:
 #   BDIX_CONCURRENCY=8   number of parallel directory requests
+#   BDIX_ALLOW_PARTIAL=1 allow smaller indexes when a server is down
 
 set -euo pipefail
 
@@ -20,7 +22,8 @@ PUSH=1
 
 usage() {
     cat <<'EOF'
-Regenerates movies_index.json and (optionally) commits + pushes it.
+Regenerates movies_index.json and series_index.json, then (optionally)
+commits + pushes them.
 
 Usage:
   ./scripts/update-index.sh             # rebuild, commit, push to origin/main
@@ -28,6 +31,7 @@ Usage:
 
 Env:
   BDIX_CONCURRENCY=8   number of parallel directory requests
+  BDIX_ALLOW_PARTIAL=1 allow smaller indexes when a server is down
 EOF
 }
 
@@ -61,16 +65,20 @@ git rev-parse --is-inside-work-tree >/dev/null 2>&1 || {
 echo "==> Crawling BDIX servers and generating movies_index.json"
 node scripts/generate-movies-index.mjs
 
-if [ -z "$(git status --porcelain -- movies_index.json)" ]; then
-    echo "==> movies_index.json is unchanged; nothing to commit."
+echo "==> Crawling BDIX servers and generating series_index.json"
+node scripts/generate-series-index.mjs
+
+if [ -z "$(git status --porcelain -- movies_index.json series_index.json)" ]; then
+    echo "==> Indexes are unchanged; nothing to commit."
     exit 0
 fi
 
-COUNT="$(node -e "process.stdout.write(String(require('./movies_index.json').count))")"
+MOVIE_COUNT="$(node -e "process.stdout.write(String(require('./movies_index.json').count))")"
+SERIES_COUNT="$(node -e "process.stdout.write(String(require('./series_index.json').counts.shows))")"
 
-echo "==> Committing movies_index.json (${COUNT} movies)"
-git add movies_index.json
-git commit -m "Update movie index (${COUNT} movies)"
+echo "==> Committing indexes (${MOVIE_COUNT} movies, ${SERIES_COUNT} shows)"
+git add movies_index.json series_index.json
+git commit -m "Update indexes (${MOVIE_COUNT} movies, ${SERIES_COUNT} shows)"
 
 if [ "$PUSH" -eq 1 ]; then
     echo "==> Pushing to origin/main (your SSH key passphrase may be requested)"
