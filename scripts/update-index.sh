@@ -76,9 +76,12 @@ fi
 MOVIE_COUNT="$(node -e "process.stdout.write(String(require('./movies_index.json').count))")"
 SERIES_COUNT="$(node -e "process.stdout.write(String(require('./series_index.json').counts.shows))")"
 
-echo "==> Committing indexes (${MOVIE_COUNT} movies, ${SERIES_COUNT} shows)"
-git add movies_index.json series_index.json
-git commit -m "Update indexes (${MOVIE_COUNT} movies, ${SERIES_COUNT} shows)"
+echo "==> Rebuilding providers with updated indexes"
+node build.js
+
+echo "==> Committing indexes and providers (${MOVIE_COUNT} movies, ${SERIES_COUNT} shows)"
+git add movies_index.json series_index.json providers/iccftp-movies.js providers/iccftp-series.js
+git commit -m "Update indexes and bundled providers (${MOVIE_COUNT} movies, ${SERIES_COUNT} shows)"
 
 if [ "$PUSH" -eq 1 ]; then
     echo "==> Pushing to origin/main (your SSH key passphrase may be requested)"

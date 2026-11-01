@@ -1,4 +1,4 @@
-import { MOVIES_INDEX_URL } from "./constants.js";
+import movieIndex from "../../movies_index.json";
 
 import {
   buildStream,
@@ -10,27 +10,10 @@ import {
 const MIN_TITLE_SIMILARITY = 0.80;
 
 /**
- * Downloads the pre-built movie index. No local caching: the hosted JSON is
- * the cache, so every lookup reflects the last published index.
+ * Returns the pre-built movie index bundled with the provider.
  */
 export async function loadMovieIndex() {
-  const res = await fetch(MOVIES_INDEX_URL, {
-    headers: {
-      Accept: "application/json",
-    },
-  });
-
-  if (!res.ok) {
-    throw new Error(`HTTP ${res.status}`);
-  }
-
-  const data = await res.json();
-
-  if (!data || typeof data.titles !== "object" || data.titles === null) {
-    throw new Error("invalid index format");
-  }
-
-  return data;
+  return movieIndex;
 }
 
 function safeDecode(value) {

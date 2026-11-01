@@ -1,4 +1,4 @@
-import { SERIES_INDEX_URL } from "./constants.js";
+import seriesIndex from "../../series_index.json";
 
 import {
     buildEpisodeStream,
@@ -9,31 +9,10 @@ import {
 } from "./utils.js";
 
 /**
- * Downloads the pre-built series index. No local caching: the hosted JSON is
- * the cache, so every lookup reflects the last published index.
+ * Returns the pre-built series index bundled with the provider.
  */
 export async function loadSeriesIndex() {
-    const res = await fetch(SERIES_INDEX_URL, {
-        headers: {
-            Accept: "application/json"
-        }
-    });
-
-    if (!res.ok) {
-        throw new Error(`HTTP ${res.status}`);
-    }
-
-    const data = await res.json();
-
-    if (
-        !data ||
-        typeof data.shows !== "object" ||
-        data.shows === null
-    ) {
-        throw new Error("invalid index format");
-    }
-
-    return data;
+    return seriesIndex;
 }
 
 /**
