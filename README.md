@@ -168,6 +168,12 @@ catalogs hosted on GitHub. Only when the title (and season/episode) is not
 in the catalog does the provider crawl the file servers, so most lookups
 avoid walking the whole directory tree.
 
+Live crawling is currently disabled with `ENABLE_LIVE_CRAWL = false` in
+`src/shared/config.js`: the providers only return index hits and return no
+streams on a miss. Set it to `true` and rebuild the providers to re-enable
+the crawl fallback. The index generators still crawl regardless of this
+toggle.
+
 Regenerate the catalogs after the servers change:
 
 ```bash

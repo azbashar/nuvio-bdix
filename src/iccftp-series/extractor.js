@@ -1,4 +1,5 @@
 import { crawlSeriesCatalog } from "./catalog.js";
+import { ENABLE_LIVE_CRAWL } from "../shared/config.js";
 import {
     loadSeriesIndex,
     searchSeriesIndex
@@ -103,13 +104,19 @@ export async function extractStreams(tmdbId, season, episode) {
         }
 
         console.log(
-            `[BDIX] Index miss: ${target.name} S${season}E${episode}, crawling servers`
+            `[BDIX] Index miss: ${target.name} S${season}E${episode}`
         );
     } catch (err) {
         console.error(
-            "[BDIX] Series index unavailable, crawling servers:",
+            "[BDIX] Series index unavailable:",
             err.message
         );
+    }
+
+    if (!ENABLE_LIVE_CRAWL) {
+        console.log("[BDIX] Live crawl disabled; returning no streams");
+
+        return [];
     }
 
     //

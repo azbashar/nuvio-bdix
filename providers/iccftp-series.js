@@ -1,6 +1,6 @@
 /**
  * iccftp-series - Built from src/iccftp-series/
- * Generated: 2026-11-01T14:56:42.302Z
+ * Generated: 2026-11-01T15:11:53.407Z
  */
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -98,6 +98,7 @@ var DIRECT_ROOTS = [
 ];
 var TMDB_API_KEY = "1865f43a0549ca50d341dd9ab8b29f49";
 var TMDB_BASE_URL = "https://api.themoviedb.org/3";
+var ENABLE_LIVE_CRAWL = false;
 var VIDEO_EXTENSIONS = [
   ".mkv",
   ".mp4",
@@ -1161,13 +1162,17 @@ function extractStreams(tmdbId, season, episode) {
         }
       }
       console.log(
-        `[BDIX] Index miss: ${target.name} S${season}E${episode}, crawling servers`
+        `[BDIX] Index miss: ${target.name} S${season}E${episode}`
       );
     } catch (err) {
       console.error(
-        "[BDIX] Series index unavailable, crawling servers:",
+        "[BDIX] Series index unavailable:",
         err.message
       );
+    }
+    if (!ENABLE_LIVE_CRAWL) {
+      console.log("[BDIX] Live crawl disabled; returning no streams");
+      return [];
     }
     const records = yield crawlSeriesCatalog({
       shouldCollect: (seasonFolder) => showMatchesTarget(seasonFolder, target)

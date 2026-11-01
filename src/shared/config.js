@@ -27,6 +27,11 @@ export const TMDB_API_KEY = "1865f43a0549ca50d341dd9ab8b29f49";
 
 export const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 
+// Live-crawl fallback. While disabled, both ICCFTP providers only use their
+// hosted indexes and return no streams on a miss. Set to true (and rebuild)
+// to enable scraping the file servers again.
+export const ENABLE_LIVE_CRAWL = false;
+
 export const VIDEO_EXTENSIONS = [
     ".mkv",
     ".mp4",

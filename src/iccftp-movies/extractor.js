@@ -1,5 +1,6 @@
 import { crawlCatalog } from "./catalog.js";
 import { searchMovieIndex } from "./movies-index.js";
+import { ENABLE_LIVE_CRAWL } from "../shared/config.js";
 
 import {
   fetchTmdbDetails,
@@ -30,13 +31,18 @@ export async function extractStreams(tmdbId) {
     }
 
     console.log(
-      `[BDIX] Index miss: ${movie.title} (${movie.year}), crawling servers`
+      `[BDIX] Index miss: ${movie.title} (${movie.year})`
     );
   } catch (err) {
     console.error(
-      "[BDIX] Index unavailable, crawling servers:",
+      "[BDIX] Index unavailable:",
       err.message
     );
+  }
+
+  if (!ENABLE_LIVE_CRAWL) {
+    console.log("[BDIX] Live crawl disabled; returning no streams");
+    return [];
   }
 
   //

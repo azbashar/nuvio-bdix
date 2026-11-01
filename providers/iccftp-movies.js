@@ -1,6 +1,6 @@
 /**
  * iccftp-movies - Built from src/iccftp-movies/
- * Generated: 2026-11-01T14:56:42.281Z
+ * Generated: 2026-11-01T15:11:53.385Z
  */
 var __create = Object.create;
 var __defProp = Object.defineProperty;
@@ -81,6 +81,7 @@ var DIRECT_ROOTS = [
 ];
 var TMDB_API_KEY = "1865f43a0549ca50d341dd9ab8b29f49";
 var TMDB_BASE_URL = "https://api.themoviedb.org/3";
+var ENABLE_LIVE_CRAWL = false;
 var VIDEO_EXTENSIONS = [
   ".mkv",
   ".mp4",
@@ -427,13 +428,17 @@ function extractStreams(tmdbId) {
         return indexed;
       }
       console.log(
-        `[BDIX] Index miss: ${movie.title} (${movie.year}), crawling servers`
+        `[BDIX] Index miss: ${movie.title} (${movie.year})`
       );
     } catch (err) {
       console.error(
-        "[BDIX] Index unavailable, crawling servers:",
+        "[BDIX] Index unavailable:",
         err.message
       );
+    }
+    if (!ENABLE_LIVE_CRAWL) {
+      console.log("[BDIX] Live crawl disabled; returning no streams");
+      return [];
     }
     const matches = yield crawlCatalog({
       match: (candidate) => isGoodMatch(
