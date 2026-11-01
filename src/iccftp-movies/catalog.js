@@ -37,7 +37,7 @@ export async function crawlCatalog({
   const seenUrls = new Set();
   let directories = 0;
 
-  // Server roots contain share folders, each share has a Movies/ folder.
+  // Server roots contain share folders, each share has a Movies/ or Movie/ folder.
   for (const root of SERVER_ROOTS) {
     let shares;
 
@@ -53,16 +53,18 @@ export async function crawlCatalog({
 
       const shareUrl = new URL(share.href, root).href;
       queue.push(new URL("Movies/", shareUrl).href);
+      queue.push(new URL("Movie/", shareUrl).href);
     }
   }
 
   // Direct roots are already share folders.
   for (const root of DIRECT_MOVIE_ROOTS) {
     queue.push(new URL("Movies/", root).href);
+    queue.push(new URL("Movie/", root).href);
   }
 
   async function crawl(directoryUrl) {
-    if (!directoryUrl.includes("/Movies/")) return;
+    if (!/\/movies?\//i.test(directoryUrl)) return;
     if (visited.has(directoryUrl)) return;
 
     visited.add(directoryUrl);
@@ -72,7 +74,9 @@ export async function crawlCatalog({
     try {
       entries = await fetchDirectory(directoryUrl);
     } catch (err) {
-      console.error("[BDIX] Failed:", directoryUrl, err.message);
+      if (!err.message?.includes("404")) {
+        console.error("[BDIX] Failed:", directoryUrl, err.message);
+      }
       return;
     }
 

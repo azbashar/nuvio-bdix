@@ -6,11 +6,15 @@ export const SERVER_ROOTS = [
     "http://10.16.100.202/ftps10/",
     // Temporarily disabled: server was unreachable (new link TBD).
     // "http://10.16.100.213/iccftps13/",
-    "http://10.16.100.212/iccftps12/"
+    "http://10.16.100.212/iccftps12/",
+    "http://10.16.100.214/iccftps14/"
 ];
 
 export const DIRECT_ROOTS = [
     // These are already share folders
+    "http://10.16.100.230/ftps1d1/",
+    "http://10.16.100.230/ftps1d2/",
+    "http://10.16.100.230/ftps1d1/",
     "http://10.16.100.248/ftps6d1/",
     "http://10.16.100.248/ftps6d2/",
     "http://10.16.100.248/ftps6d3/",
@@ -19,6 +23,15 @@ export const DIRECT_ROOTS = [
     "http://10.16.100.241/ftps3d1/",
     "http://10.16.100.241/ftps3d3/",
     "http://10.16.100.241/ftps3d5/",
+    "http://10.16.100.241/ftps3d6/",
+    "http://10.16.100.241/ftps3d9/",
+    "http://10.16.100.245/ftps2d1/",
+    "http://10.16.100.245/ftps2d3/",
+    "http://10.16.100.245/ftps3d3/",
+    "http://10.16.100.245/ftps3d1/",
+    "http://10.16.100.245/ftps3d5/",
+    "http://10.16.100.245/ftps3d6/",
+    "http://10.16.100.245/ftps3d9/",
     "http://10.16.100.250/ftps10d1/",
     "http://10.16.100.250/ftps10d2/"
 ];
@@ -30,7 +43,7 @@ export const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 // Live-crawl fallback. While disabled, both ICCFTP providers only use their
 // hosted indexes and return no streams on a miss. Set to true (and rebuild)
 // to enable scraping the file servers again.
-export const ENABLE_LIVE_CRAWL = false;
+export const ENABLE_LIVE_CRAWL = true;
 
 export const VIDEO_EXTENSIONS = [
     ".mkv",
